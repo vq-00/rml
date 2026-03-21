@@ -1,0 +1,3 @@
+root/maps/*
+!root/maps/
+!root/maps/**/*.vmf

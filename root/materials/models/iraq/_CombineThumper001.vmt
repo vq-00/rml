@@ -1,0 +1,10 @@
+
+vertexlitgeneric
+{
+
+	$basetexture models/iraq/oiltower2
+
+	$halflambert 1
+
+
+}
