@@ -462,6 +462,16 @@ function _SpawnMap( nSeed )
 	}
 }
 
+function OnGameplayStart() 
+{
+	DeleteMap();
+	
+	// need a delay for the engine to free previous edicts properly
+	DoEntFire( "script", "RunScriptCode", "newthread( _SpawnMap ).call( -1 );", 0.03, null, null );
+	DoEntFire( "script", "RunScriptCode", "newthread( BuildNavigation ).call();", 0.08, null, null );
+	DoEntFire( "clip_tile_*", "Kill", "", 0.1, null, null );
+}
+
 foreach( strVar, pVar in self.GetScriptScope() )
 {	
 	if ( strVar in ScriptScopePostSpawn_t )
