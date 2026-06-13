@@ -3,8 +3,8 @@ ScriptScopePostSpawn_t <- clone self.GetScriptScope();
 IncludeScript( "rml_generator.nut" );
 
 const TILE_SIZE = 1280;
-const MAP_MAX_SIZE_X = 20;
-const MAP_MAX_SIZE_Y = 20;
+const MAP_MAX_SIZE_X = 10;
+const MAP_MAX_SIZE_Y = 10;
 
 function GetTileWorldCoordinates( x, y )
 {
@@ -295,7 +295,6 @@ function PickRandomTileVariant( Variants_t )
 	return Variants_t[ RandomHQUniformIntDistribution( 0, Variants_t.len() - 1 ) ];
 }
 
-hSelf <- self;
 function BuildLayout( Layout_t )
 {
 	local nSizeY = Layout_t.len();
@@ -398,8 +397,8 @@ function SpawnMap( nSeed = -1 )
 	DeleteMap();
 	
 	// need a delay for the engine to free previous edicts properly
-	EntFireByHandle( self, "RunScriptCode", "newthread( _SpawnMap ).call( " + nSeed.tostring() + " );", 0.03, null, null );
-	EntFireByHandle( self, "RunScriptCode", "newthread( BuildNavigation ).call();", 0.08, null, null );
+	EntFireByHandle( hSelf, "RunScriptCode", "newthread( _SpawnMap ).call( " + nSeed.tostring() + " );", 0.03, null, null );
+	EntFireByHandle( hSelf, "RunScriptCode", "newthread( BuildNavigation ).call();", 0.08, null, null );
 	DoEntFire( "clip_tile_*", "Kill", "", 0.1, null, null );
 }
 
@@ -464,17 +463,14 @@ function _SpawnMap( nSeed )
 
 function OnGameplayStart() 
 {
-	DeleteMap();
-	
-	// need a delay for the engine to free previous edicts properly
-	DoEntFire( "script", "RunScriptCode", "newthread( _SpawnMap ).call( -1 );", 0.03, null, null );
-	DoEntFire( "script", "RunScriptCode", "newthread( BuildNavigation ).call();", 0.08, null, null );
-	DoEntFire( "clip_tile_*", "Kill", "", 0.1, null, null );
+	SpawnMap();
 }
+
+hSelf <- self;
 
 foreach( strVar, pVar in self.GetScriptScope() )
 {	
-	if ( strVar in ScriptScopePostSpawn_t )
+	if ( strVar in ScriptScopePostSpawn_t && strVar != "hSelf" )
 		continue;
 	
 	//if ( typeof( pVar ) == "function" || typeof( pVar ) == "table" || typeof( pVar ) == "array" )
