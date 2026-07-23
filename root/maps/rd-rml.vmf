@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "435"
+	"mapversion" "454"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -56,7 +56,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "435"
+	"mapversion" "454"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -24553,27 +24553,6 @@ world
 			"visgroupautoshown" "1"
 		}
 	}
-	group
-	{
-		"id" "195645"
-		editor
-		{
-			"color" "244 181 0"
-			"groupid" "195834"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
-	group
-	{
-		"id" "276889"
-		editor
-		{
-			"color" "211 200 0"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
 }
 hidden
 {
@@ -28484,6 +28463,7 @@ entity
 	"id" "753"
 	"classname" "info_player_start"
 	"angles" "0 0 0"
+	"marineprofile" "-1"
 	"origin" "135.082 9.25995 32"
 	editor
 	{
@@ -41718,6 +41698,7 @@ entity
 	"id" "8259"
 	"classname" "info_player_start"
 	"angles" "0 0 0"
+	"marineprofile" "-1"
 	"origin" "-4984.92 5129.26 32"
 	editor
 	{
@@ -41733,6 +41714,7 @@ entity
 	"id" "8466"
 	"classname" "info_player_start"
 	"angles" "0 0 0"
+	"marineprofile" "-1"
 	"origin" "135.082 5129.26 32"
 	editor
 	{
@@ -41748,6 +41730,7 @@ entity
 	"id" "8673"
 	"classname" "info_player_start"
 	"angles" "0 0 0"
+	"marineprofile" "-1"
 	"origin" "5255.08 5129.26 32"
 	editor
 	{
@@ -41763,6 +41746,7 @@ entity
 	"id" "8880"
 	"classname" "info_player_start"
 	"angles" "0 0 0"
+	"marineprofile" "-1"
 	"origin" "5255.08 9.25977 32"
 	editor
 	{
@@ -41778,6 +41762,7 @@ entity
 	"id" "9087"
 	"classname" "info_player_start"
 	"angles" "0 0 0"
+	"marineprofile" "-1"
 	"origin" "5255.08 -5110.74 32"
 	editor
 	{
@@ -41793,6 +41778,7 @@ entity
 	"id" "9294"
 	"classname" "info_player_start"
 	"angles" "0 0 0"
+	"marineprofile" "-1"
 	"origin" "135.082 -5110.74 32"
 	editor
 	{
@@ -41808,6 +41794,7 @@ entity
 	"id" "9708"
 	"classname" "info_player_start"
 	"angles" "0 0 0"
+	"marineprofile" "-1"
 	"origin" "-4984.92 -5110.74 32"
 	editor
 	{
@@ -41823,6 +41810,7 @@ entity
 	"id" "9915"
 	"classname" "info_player_start"
 	"angles" "0 0 0"
+	"marineprofile" "-1"
 	"origin" "-4984.92 9.25977 32"
 	editor
 	{
@@ -102227,6 +102215,688 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 4000]"
+	}
+}
+entity
+{
+	"id" "298875"
+	"classname" "asw_objective_triggered"
+	"objectivetitle" "Complete Hacks"
+	"Optional" "1"
+	"SetMaxProgress" "3"
+	"SetProgress" "0"
+	"SetShowPercentage" "0"
+	"targetname" "obj_hacks"
+	"Visible" "0"
+	"origin" "-16 -24 1"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "298886"
+	"classname" "asw_objective_triggered"
+	"objectivetitle" "Escape"
+	"Optional" "0"
+	"SetMaxProgress" "0"
+	"SetProgress" "0"
+	"SetShowPercentage" "0"
+	"targetname" "obj_escape"
+	"Visible" "1"
+	"origin" "-16 -104 1"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "298902"
+	"classname" "math_counter"
+	"max" "3"
+	"min" "0"
+	"StartDisabled" "0"
+	"startvalue" "0"
+	"targetname" "counter_hacks"
+	connections
+	{
+		"OnHitMax" "obj_hacks_realSetComplete0-1"
+		"OutValue" "obj_hacks_realSetProgress0-1"
+		"OnHitMax" "counter_escapeAdd10-1"
+	}
+	"origin" "-37.5758 -83.0389 1"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "298930"
+	"classname" "asw_objective_triggered"
+	"objectivetitle" "Complete Hacks"
+	"Optional" "0"
+	"SetMaxProgress" "3"
+	"SetProgress" "0"
+	"SetShowPercentage" "0"
+	"targetname" "obj_hacks_real"
+	"Visible" "1"
+	"origin" "-16 -56 1"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "298969"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_hacks_real"
+	"StartDisabled" "0"
+	"targetname" "objmarker_hacks"
+	"origin" "-256 64 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "298977"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_hacks_real"
+	"StartDisabled" "0"
+	"targetname" "objmarker_hacks"
+	"origin" "-192 64 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "298979"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_hacks_real"
+	"StartDisabled" "0"
+	"targetname" "objmarker_hacks"
+	"origin" "-240 64 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299002"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_hacks_real"
+	"StartDisabled" "0"
+	"targetname" "objmarker_hacks"
+	"origin" "-224 64 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299004"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_hacks_real"
+	"StartDisabled" "0"
+	"targetname" "objmarker_hacks"
+	"origin" "-208 64 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299006"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_hacks_real"
+	"StartDisabled" "0"
+	"targetname" "objmarker_hacks"
+	"origin" "-176 64 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299008"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_hacks_real"
+	"StartDisabled" "0"
+	"targetname" "objmarker_hacks"
+	"origin" "-160 64 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299010"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_hacks_real"
+	"StartDisabled" "0"
+	"targetname" "objmarker_hacks"
+	"origin" "-144 64 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299012"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_hacks_real"
+	"StartDisabled" "0"
+	"targetname" "objmarker_hacks"
+	"origin" "-128 64 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299014"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_hacks_real"
+	"StartDisabled" "0"
+	"targetname" "objmarker_hacks"
+	"origin" "-112 64 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299016"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_hacks_real"
+	"StartDisabled" "0"
+	"targetname" "objmarker_hacks"
+	"origin" "-96 64 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299018"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_hacks_real"
+	"StartDisabled" "0"
+	"targetname" "objmarker_hacks"
+	"origin" "-80 64 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299020"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_hacks_real"
+	"StartDisabled" "0"
+	"targetname" "objmarker_hacks"
+	"origin" "-64 64 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299042"
+	"classname" "math_counter"
+	"max" "3"
+	"min" "0"
+	"StartDisabled" "0"
+	"startvalue" "0"
+	"targetname" "counter_power"
+	connections
+	{
+		"OnHitMax" "obj_powerSetComplete0-1"
+		"OutValue" "obj_powerSetProgress0-1"
+		"OnHitMax" "asw_trigger_fallKill0-1"
+		"OnHitMax" "env_laserTurnOff0-1"
+		"OnHitMax" "counter_escapeAdd10-1"
+	}
+	"origin" "-48 -128 1"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "299048"
+	"classname" "asw_objective_triggered"
+	"objectivetitle" "Destroy Power Sources"
+	"Optional" "0"
+	"SetMaxProgress" "3"
+	"SetProgress" "0"
+	"SetShowPercentage" "0"
+	"targetname" "obj_power"
+	"Visible" "1"
+	"origin" "-16 -80 1"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299061"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_power"
+	"StartDisabled" "0"
+	"targetname" "objmarker_power"
+	"origin" "-64 16 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299069"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_power"
+	"StartDisabled" "0"
+	"targetname" "objmarker_power"
+	"origin" "-80 16 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299071"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_power"
+	"StartDisabled" "0"
+	"targetname" "objmarker_power"
+	"origin" "-96 16 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299073"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_power"
+	"StartDisabled" "0"
+	"targetname" "objmarker_power"
+	"origin" "-112 16 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299075"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_power"
+	"StartDisabled" "0"
+	"targetname" "objmarker_power"
+	"origin" "-128 16 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299077"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_power"
+	"StartDisabled" "0"
+	"targetname" "objmarker_power"
+	"origin" "-144 16 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299079"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_power"
+	"StartDisabled" "0"
+	"targetname" "objmarker_power"
+	"origin" "-160 16 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299081"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_power"
+	"StartDisabled" "0"
+	"targetname" "objmarker_power"
+	"origin" "-176 16 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299083"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_power"
+	"StartDisabled" "0"
+	"targetname" "objmarker_power"
+	"origin" "-192 16 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299085"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_power"
+	"StartDisabled" "0"
+	"targetname" "objmarker_power"
+	"origin" "-208 16 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299087"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_power"
+	"StartDisabled" "0"
+	"targetname" "objmarker_power"
+	"origin" "-224 16 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299089"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_power"
+	"StartDisabled" "0"
+	"targetname" "objmarker_power"
+	"origin" "-240 16 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299091"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_power"
+	"StartDisabled" "0"
+	"targetname" "objmarker_power"
+	"origin" "-256 16 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299105"
+	"classname" "math_counter"
+	"max" "2"
+	"min" "0"
+	"StartDisabled" "0"
+	"startvalue" "0"
+	"targetname" "counter_escape"
+	connections
+	{
+		"OnHitMax" "trigger_asw_door_areaAddOutputOnTrigger obj_escape:SetComplete::0:10-1"
+		"OnHitMax" "objmarker_escapeEnable0-1"
+	}
+	"origin" "-80 -88 1"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "299143"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "512"
+	"mapwidth" "512"
+	"objectivename" "obj_escape"
+	"StartDisabled" "1"
+	"targetname" "objmarker_escape"
+	"origin" "-64 -24 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "299171"
+	"classname" "func_instance"
+	"angles" "-0 0 0"
+	"file" "instances/instance_tile_turn4.vmf"
+	"fixup_style" "2"
+	"origin" "7040 7040 -4864"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
 	}
 }
 cameras

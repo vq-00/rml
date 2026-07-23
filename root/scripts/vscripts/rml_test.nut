@@ -48,9 +48,26 @@ function PlaceTileInPlace( x, y, fRotate, strTile )
 
 	local hScenery = null;
 	while ( hScenery = Entities.FindByName( hScenery, "scenery_tile_" + strTile ) )
-		if ( hScenery.GetOrigin().z < -1000.0 )
-			hScenery.SetParent( hNewTile );
+	{
+		if ( hScenery.GetOrigin().z > -1000.0 )
+			continue;
 			
+		hScenery.SetParent( hNewTile );
+		
+		// spawners are cool kids gangsters mafia members who dont want to have parents
+		if ( hScenery.GetClassname() != "asw_spawner" )
+			continue;
+			
+		local hSpawnerPos = Entities.CreateByClassname( "info_target" );
+		hSpawnerPos.SetOrigin( hScenery.GetOrigin() );
+		hSpawnerPos.SetAnglesVector( hScenery.GetAngles() );
+		hSpawnerPos.SetParent( hNewTile );
+		hSpawnerPos.Spawn();
+		hSpawnerPos.Activate();
+		hSpawnerPos.ValidateScriptScope();
+		hSpawnerPos.GetScriptScope().hSpawner <- hScenery;
+	}	
+	
 	local hClip = null;
 	while ( hClip = Entities.FindByName( hClip, "clip_tile_" + strTile ) )
 		if ( hClip.GetOrigin().z < -1000.0 )
@@ -60,6 +77,19 @@ function PlaceTileInPlace( x, y, fRotate, strTile )
 	
 	hNewTile.SetOrigin( vecOrigin );
 	hNewTile.SetAngles( 0.0, fRotate, 0.0 );
+	
+	local hSpawnerHelper = null;
+	while ( hSpawnerHelper = Entities.FindByClassname( hSpawnerHelper, "info_target" ) )
+	{
+		hSpawnerHelper.ValidateScriptScope();
+		if ( !( "hSpawner" in hSpawnerHelper.GetScriptScope() ) )
+			continue;
+			
+		local hSpawner = hSpawnerHelper.GetScriptScope().hSpawner;
+		hSpawner.SetOrigin( hSpawnerHelper.GetOrigin() );
+		hSpawner.SetAnglesVector( hSpawnerHelper.GetAngles() );
+		hSpawnerHelper.Destroy();
+	}
 }
 
 function GetPreviousTile( Layout_t, x, y, cIgnore = ' ' )
@@ -385,6 +415,10 @@ function DeleteMap()
 {
 	DoEntFire( "brush_acid*", "Disable", "", 0.0, null, null );
 	DoEntFire( "tile_*", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_objective_*", "SetIncomplete", "", 0.0, null, null );
+	DoEntFire( "asw_marker", "SetIncomplete", "", 0.0, null, null );
+	DoEntFire( "counter_*", "SetValue", "0", 0.0, null, null );
+	DoEntFire( "objmarker_escape", "Disable", "", 0.0, null, null );
 	
 	foreach ( strNode, hNode in Nodes_t )
 		hNode.ClearLinks();
@@ -428,7 +462,7 @@ function _SpawnMap( nSeed )
 		
 	PrintLayout( BranchLayout_t );
 		
-	BranchLayout_t = CreateAliveBranchLayout( LayoutBase_t, BranchLayout_t, 0, 1, 4 );
+	BranchLayout_t = CreateAliveBranchLayout( LayoutBase_t, BranchLayout_t, 2, 1, 4 );
 	if ( !BranchLayout_t )
 		return ClientPrint( null, 3, "failed to create a alivebranch layout after 10000 tries" );
 	
@@ -458,6 +492,61 @@ function _SpawnMap( nSeed )
 	{
 		hMarine.SetOrigin( vecStartWorld + Vector( 0.0, 0.0, 64.0 ) );
 		NetProps.SetPropFloat( hMarine.GetCommander(), "m_flMovementAxisYaw", GetTileRotation( -1, -1, LayoutBase_t[ vecStart.y ][ vecStart.x ], ' ' ) - 90.0 );
+	}
+	
+	EntFireByHandle( hSelf, "RunScriptCode", "MapPostSpawn()", 1.0, null, null );
+}
+
+function MapPostSpawn()
+{
+	local nCompAreas = 0;
+	local hCompArea = null;
+	while ( hCompArea = Entities.FindByClassname( hCompArea, "trigger_asw_computer_area" ) )
+	{
+		nCompAreas++;
+		local hMarker = Entities.FindByName( null, "objmarker_hacks" );
+		DoEntFire( "objmarker_hacks", "Enable", "", 0.0, null, null );
+		hMarker.SetOrigin( hCompArea.GetOrigin() );
+		hMarker.SetName( "objmarker_nameless_for_now" );
+	}
+	
+	DoEntFire( "obj_hacks_real", "SetMaxProgress", nCompAreas.tostring(), 0.0, null, null );
+	DoEntFire( "counter_hacks", "addoutput", "max " + nCompAreas.tostring(), 0.0, null, null );
+	DoEntFire( "objmarker_hacks", "Disable", "", 0.05, null, null );
+	DoEntFire( "objmarker_nameless_for_now", "RunScriptCode", "self.SetName( \"objmarker_hacks\" )", 0.10, null, null );
+	
+	local nButtAreas = 0;
+	local hButtArea = null;
+	while ( hButtArea = Entities.FindByClassname( hButtArea, "trigger_asw_button_area" ) )
+	{
+		nButtAreas++;
+		local hMarker = Entities.FindByName( null, "objmarker_power" );
+		DoEntFire( "objmarker_power", "Enable", "", 0.0, null, null );
+		hMarker.SetOrigin( hButtArea.GetOrigin() );
+		hMarker.SetName( "objmarker_nameless_for_now2" );
+	}
+	
+	DoEntFire( "obj_power", "SetMaxProgress", nButtAreas.tostring(), 0.0, null, null );
+	DoEntFire( "counter_power", "addoutput", "max " + nButtAreas.tostring(), 0.0, null, null );
+	DoEntFire( "objmarker_power", "Disable", "", 0.05, null, null );
+	DoEntFire( "objmarker_nameless_for_now2", "RunScriptCode", "self.SetName( \"objmarker_power\" )", 0.10, null, null );
+	
+	DoEntFire( "objmarker_escape", "RunScriptCode", "self.SetOrigin( Entities.FindByClassname( null, \"trigger_asw_door_area\" ).GetOrigin() )", 0.0, null, null );
+	
+	local nLaser = 0;
+	local hLaser = null;
+	while ( hLaser = Entities.FindByClassname( hLaser, "env_laser" ) )
+	{
+		nLaser++;
+		
+		EntFireByHandle( hLaser, "ClearParent", "", 0.0, null, null );
+		
+		local hTarget = Entities.FindByClassnameNearest( "info_target", hLaser.GetOrigin(), 512.0 );
+		hTarget.SetName( "lasertarget_" + nLaser.tostring() );
+		
+		NetProps.SetPropString( hLaser, "m_iszLaserTarget", hTarget.GetName() );
+		
+		EntFireByHandle( hLaser, "TurnOn", "", 0.0, null, null );
 	}
 }
 

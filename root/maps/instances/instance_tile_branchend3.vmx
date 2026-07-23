@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "6"
+	"mapversion" "5"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "6"
+	"mapversion" "5"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -5035,7 +5035,7 @@ entity
 	"wait" "1"
 	connections
 	{
-		"OnComputerDataDownloaded" "counter_hacksAdd10-1"
+		"OnComputerDataDownloaded" "math_counterAdd10-1"
 		"OnComputerDataDownloaded" "!selfRunScriptCodeEntFireByHandle( Entities.FindByClassnameNearest( `asw_marker`, self.GetOrigin(), 512.0 ), `SetComplete`, ``, 0.0, null, null )0-1"
 	}
 	solid
