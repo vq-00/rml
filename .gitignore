@@ -1,6 +1,5 @@
 root/maps/*
-!root/maps/
+!root/maps/*.vmf
 !root/maps/instances/
-!root/maps/**/*.vmf
-
-
+root/maps/instances/*
+!root/maps/instances/*.vmf
