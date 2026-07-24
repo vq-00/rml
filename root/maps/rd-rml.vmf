@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "506"
+	"mapversion" "507"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -56,7 +56,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "506"
+	"mapversion" "507"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -127414,6 +127414,22 @@ entity
 	"classname" "func_instance"
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_straight5.vmf"
+	"fixup_style" "2"
+	"origin" "7040 7040 -4864"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "318813"
+	"classname" "func_instance"
+	"angles" "-0 0 0"
+	"file" "instances/instance_tile_turn5.vmf"
 	"fixup_style" "2"
 	"origin" "7040 7040 -4864"
 	editor
