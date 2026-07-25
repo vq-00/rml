@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "10"
+	"mapversion" "11"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "10"
+	"mapversion" "16"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -28,10 +28,21 @@ world
 	"skyname" "blacksky"
 	group
 	{
+		"id" "1199"
+		editor
+		{
+			"color" "240 185 0"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	group
+	{
 		"id" "594"
 		editor
 		{
-			"color" "218 195 0"
+			"color" "240 185 0"
+			"groupid" "1199"
 			"visgroupshown" "1"
 			"visgroupautoshown" "1"
 		}
@@ -5366,7 +5377,7 @@ entity
 }
 entity
 {
-	"id" "394"
+	"id" "434"
 	"classname" "prop_dynamic"
 	"AlwaysTransmit" "0"
 	"angles" "89.5 225 0"
@@ -5393,48 +5404,11 @@ entity
 	"spawnflags" "0"
 	"StartDisabled" "0"
 	"targetname" "scenery_tile_branchend3"
-	"origin" "-248 -536 -39.6108"
+	"origin" "-248 -536 -416"
 	editor
 	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[9500 4000]"
-	}
-}
-entity
-{
-	"id" "426"
-	"classname" "prop_dynamic"
-	"AlwaysTransmit" "0"
-	"angles" "89.5 225 0"
-	"DisableBoneFollowers" "0"
-	"disablereceiveshadows" "0"
-	"ExplodeDamage" "0"
-	"ExplodeRadius" "0"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"HoldAnimation" "0"
-	"MaxAnimTime" "10"
-	"MinAnimTime" "5"
-	"model" "models/props/pipes/pipeset_32/pipe_straight_128.mdl"
-	"PerformanceMode" "0"
-	"pressuredelay" "0"
-	"RandomAnimation" "0"
-	"renderamt" "255"
-	"rendercolor" "31 88 31"
-	"renderfx" "0"
-	"rendermode" "0"
-	"SetBodyGroup" "0"
-	"skin" "0"
-	"solid" "6"
-	"spawnflags" "0"
-	"StartDisabled" "0"
-	"targetname" "scenery_tile_branchend3"
-	"origin" "-248 -536 -160"
-	editor
-	{
-		"color" "220 30 220"
+		"color" "240 185 0"
+		"groupid" "1199"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[9500 4000]"
@@ -5472,7 +5446,8 @@ entity
 	"origin" "-248 -536 -288"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "240 185 0"
+		"groupid" "1199"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[9500 4000]"
@@ -5480,7 +5455,7 @@ entity
 }
 entity
 {
-	"id" "434"
+	"id" "426"
 	"classname" "prop_dynamic"
 	"AlwaysTransmit" "0"
 	"angles" "89.5 225 0"
@@ -5507,10 +5482,50 @@ entity
 	"spawnflags" "0"
 	"StartDisabled" "0"
 	"targetname" "scenery_tile_branchend3"
-	"origin" "-248 -536 -416"
+	"origin" "-248 -536 -160"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "240 185 0"
+		"groupid" "1199"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[9500 4000]"
+	}
+}
+entity
+{
+	"id" "394"
+	"classname" "prop_dynamic"
+	"AlwaysTransmit" "0"
+	"angles" "89.5 225 0"
+	"DisableBoneFollowers" "0"
+	"disablereceiveshadows" "0"
+	"ExplodeDamage" "0"
+	"ExplodeRadius" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"HoldAnimation" "0"
+	"MaxAnimTime" "10"
+	"MinAnimTime" "5"
+	"model" "models/props/pipes/pipeset_32/pipe_straight_128.mdl"
+	"PerformanceMode" "0"
+	"pressuredelay" "0"
+	"RandomAnimation" "0"
+	"renderamt" "255"
+	"rendercolor" "31 88 31"
+	"renderfx" "0"
+	"rendermode" "0"
+	"SetBodyGroup" "0"
+	"skin" "0"
+	"solid" "6"
+	"spawnflags" "0"
+	"StartDisabled" "0"
+	"targetname" "scenery_tile_branchend3"
+	"origin" "-248 -536 -39.6108"
+	editor
+	{
+		"color" "240 185 0"
+		"groupid" "1199"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[9500 4000]"
@@ -5548,7 +5563,8 @@ entity
 	"origin" "-225 -513 129.44"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "240 185 0"
+		"groupid" "1199"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[9500 4000]"
@@ -5586,7 +5602,164 @@ entity
 	"origin" "-136 -424 128"
 	editor
 	{
-		"color" "220 30 220"
+		"color" "240 185 0"
+		"groupid" "1199"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[9500 4000]"
+	}
+}
+entity
+{
+	"id" "595"
+	"classname" "prop_dynamic"
+	"AlwaysTransmit" "0"
+	"angles" "0.35355 44.6465 134.999"
+	"DisableBoneFollowers" "0"
+	"disablereceiveshadows" "0"
+	"ExplodeDamage" "0"
+	"ExplodeRadius" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"HoldAnimation" "0"
+	"MaxAnimTime" "10"
+	"MinAnimTime" "5"
+	"model" "models/props/pipes/pipeset_32/pipe_straight_128.mdl"
+	"PerformanceMode" "0"
+	"pressuredelay" "0"
+	"RandomAnimation" "0"
+	"renderamt" "255"
+	"rendercolor" "31 88 31"
+	"renderfx" "0"
+	"rendermode" "0"
+	"SetBodyGroup" "0"
+	"skin" "0"
+	"solid" "6"
+	"spawnflags" "0"
+	"StartDisabled" "0"
+	"targetname" "scenery_tile_branchend3"
+	"origin" "-48 -336 128"
+	editor
+	{
+		"color" "240 185 0"
+		"groupid" "1199"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[9500 4000]"
+	}
+}
+entity
+{
+	"id" "599"
+	"classname" "prop_dynamic"
+	"AlwaysTransmit" "0"
+	"angles" "0.35355 44.6465 134.999"
+	"DisableBoneFollowers" "0"
+	"disablereceiveshadows" "0"
+	"ExplodeDamage" "0"
+	"ExplodeRadius" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"HoldAnimation" "0"
+	"MaxAnimTime" "10"
+	"MinAnimTime" "5"
+	"model" "models/props/pipes/pipeset_32/pipe_straight_128.mdl"
+	"PerformanceMode" "0"
+	"pressuredelay" "0"
+	"RandomAnimation" "0"
+	"renderamt" "255"
+	"rendercolor" "31 88 31"
+	"renderfx" "0"
+	"rendermode" "0"
+	"SetBodyGroup" "0"
+	"skin" "0"
+	"solid" "6"
+	"spawnflags" "0"
+	"StartDisabled" "0"
+	"targetname" "scenery_tile_branchend3"
+	"origin" "40 -248 128"
+	editor
+	{
+		"color" "240 185 0"
+		"groupid" "1199"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[9500 4000]"
+	}
+}
+entity
+{
+	"id" "603"
+	"classname" "prop_dynamic"
+	"AlwaysTransmit" "0"
+	"angles" "0.35355 44.6465 134.999"
+	"DisableBoneFollowers" "0"
+	"disablereceiveshadows" "0"
+	"ExplodeDamage" "0"
+	"ExplodeRadius" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"HoldAnimation" "0"
+	"MaxAnimTime" "10"
+	"MinAnimTime" "5"
+	"model" "models/props/pipes/pipeset_32/pipe_straight_128.mdl"
+	"PerformanceMode" "0"
+	"pressuredelay" "0"
+	"RandomAnimation" "0"
+	"renderamt" "255"
+	"rendercolor" "31 88 31"
+	"renderfx" "0"
+	"rendermode" "0"
+	"SetBodyGroup" "0"
+	"skin" "0"
+	"solid" "6"
+	"spawnflags" "0"
+	"StartDisabled" "0"
+	"targetname" "scenery_tile_branchend3"
+	"origin" "128 -160 128"
+	editor
+	{
+		"color" "240 185 0"
+		"groupid" "1199"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[9500 4000]"
+	}
+}
+entity
+{
+	"id" "607"
+	"classname" "prop_dynamic"
+	"AlwaysTransmit" "0"
+	"angles" "0.35355 44.6465 134.999"
+	"DisableBoneFollowers" "0"
+	"disablereceiveshadows" "0"
+	"ExplodeDamage" "0"
+	"ExplodeRadius" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"HoldAnimation" "0"
+	"MaxAnimTime" "10"
+	"MinAnimTime" "5"
+	"model" "models/props/pipes/pipeset_32/pipe_straight_128.mdl"
+	"PerformanceMode" "0"
+	"pressuredelay" "0"
+	"RandomAnimation" "0"
+	"renderamt" "255"
+	"rendercolor" "31 88 31"
+	"renderfx" "0"
+	"rendermode" "0"
+	"SetBodyGroup" "0"
+	"skin" "0"
+	"solid" "6"
+	"spawnflags" "0"
+	"StartDisabled" "0"
+	"targetname" "scenery_tile_branchend3"
+	"origin" "216 -72 128"
+	editor
+	{
+		"color" "240 185 0"
+		"groupid" "1199"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[9500 4000]"
@@ -5624,7 +5797,7 @@ entity
 	"origin" "215.472 -72.3332 128"
 	editor
 	{
-		"color" "218 195 0"
+		"color" "240 185 0"
 		"groupid" "594"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
@@ -5663,7 +5836,7 @@ entity
 	"origin" "304.472 16.6668 129.44"
 	editor
 	{
-		"color" "218 195 0"
+		"color" "240 185 0"
 		"groupid" "594"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
@@ -5702,7 +5875,7 @@ entity
 	"origin" "327.472 39.6668 -39.6108"
 	editor
 	{
-		"color" "218 195 0"
+		"color" "240 185 0"
 		"groupid" "594"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
@@ -5741,7 +5914,7 @@ entity
 	"origin" "327.472 39.6668 -160"
 	editor
 	{
-		"color" "218 195 0"
+		"color" "240 185 0"
 		"groupid" "594"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
@@ -5780,7 +5953,7 @@ entity
 	"origin" "327.472 39.6668 -288"
 	editor
 	{
-		"color" "218 195 0"
+		"color" "240 185 0"
 		"groupid" "594"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
@@ -5819,160 +5992,8 @@ entity
 	"origin" "327.472 39.6668 -416"
 	editor
 	{
-		"color" "218 195 0"
+		"color" "240 185 0"
 		"groupid" "594"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[9500 4000]"
-	}
-}
-entity
-{
-	"id" "595"
-	"classname" "prop_dynamic"
-	"AlwaysTransmit" "0"
-	"angles" "0.35355 44.6465 134.999"
-	"DisableBoneFollowers" "0"
-	"disablereceiveshadows" "0"
-	"ExplodeDamage" "0"
-	"ExplodeRadius" "0"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"HoldAnimation" "0"
-	"MaxAnimTime" "10"
-	"MinAnimTime" "5"
-	"model" "models/props/pipes/pipeset_32/pipe_straight_128.mdl"
-	"PerformanceMode" "0"
-	"pressuredelay" "0"
-	"RandomAnimation" "0"
-	"renderamt" "255"
-	"rendercolor" "31 88 31"
-	"renderfx" "0"
-	"rendermode" "0"
-	"SetBodyGroup" "0"
-	"skin" "0"
-	"solid" "6"
-	"spawnflags" "0"
-	"StartDisabled" "0"
-	"targetname" "scenery_tile_branchend3"
-	"origin" "-48 -336 128"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[9500 4000]"
-	}
-}
-entity
-{
-	"id" "599"
-	"classname" "prop_dynamic"
-	"AlwaysTransmit" "0"
-	"angles" "0.35355 44.6465 134.999"
-	"DisableBoneFollowers" "0"
-	"disablereceiveshadows" "0"
-	"ExplodeDamage" "0"
-	"ExplodeRadius" "0"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"HoldAnimation" "0"
-	"MaxAnimTime" "10"
-	"MinAnimTime" "5"
-	"model" "models/props/pipes/pipeset_32/pipe_straight_128.mdl"
-	"PerformanceMode" "0"
-	"pressuredelay" "0"
-	"RandomAnimation" "0"
-	"renderamt" "255"
-	"rendercolor" "31 88 31"
-	"renderfx" "0"
-	"rendermode" "0"
-	"SetBodyGroup" "0"
-	"skin" "0"
-	"solid" "6"
-	"spawnflags" "0"
-	"StartDisabled" "0"
-	"targetname" "scenery_tile_branchend3"
-	"origin" "40 -248 128"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[9500 4000]"
-	}
-}
-entity
-{
-	"id" "603"
-	"classname" "prop_dynamic"
-	"AlwaysTransmit" "0"
-	"angles" "0.35355 44.6465 134.999"
-	"DisableBoneFollowers" "0"
-	"disablereceiveshadows" "0"
-	"ExplodeDamage" "0"
-	"ExplodeRadius" "0"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"HoldAnimation" "0"
-	"MaxAnimTime" "10"
-	"MinAnimTime" "5"
-	"model" "models/props/pipes/pipeset_32/pipe_straight_128.mdl"
-	"PerformanceMode" "0"
-	"pressuredelay" "0"
-	"RandomAnimation" "0"
-	"renderamt" "255"
-	"rendercolor" "31 88 31"
-	"renderfx" "0"
-	"rendermode" "0"
-	"SetBodyGroup" "0"
-	"skin" "0"
-	"solid" "6"
-	"spawnflags" "0"
-	"StartDisabled" "0"
-	"targetname" "scenery_tile_branchend3"
-	"origin" "128 -160 128"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[9500 4000]"
-	}
-}
-entity
-{
-	"id" "607"
-	"classname" "prop_dynamic"
-	"AlwaysTransmit" "0"
-	"angles" "0.35355 44.6465 134.999"
-	"DisableBoneFollowers" "0"
-	"disablereceiveshadows" "0"
-	"ExplodeDamage" "0"
-	"ExplodeRadius" "0"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"HoldAnimation" "0"
-	"MaxAnimTime" "10"
-	"MinAnimTime" "5"
-	"model" "models/props/pipes/pipeset_32/pipe_straight_128.mdl"
-	"PerformanceMode" "0"
-	"pressuredelay" "0"
-	"RandomAnimation" "0"
-	"renderamt" "255"
-	"rendercolor" "31 88 31"
-	"renderfx" "0"
-	"rendermode" "0"
-	"SetBodyGroup" "0"
-	"skin" "0"
-	"solid" "6"
-	"spawnflags" "0"
-	"StartDisabled" "0"
-	"targetname" "scenery_tile_branchend3"
-	"origin" "216 -72 128"
-	editor
-	{
-		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[9500 4000]"
