@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "513"
+	"mapversion" "516"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -56,7 +56,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "513"
+	"mapversion" "516"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -43753,22 +43753,6 @@ hidden
 		}
 	}
 }
-entity
-{
-	"id" "753"
-	"classname" "info_player_start"
-	"angles" "0 0 0"
-	"marineprofile" "-1"
-	"origin" "135.082 9.25995 32"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupid" "19"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 -12768]"
-	}
-}
 hidden
 {
 	entity
@@ -56986,134 +56970,6 @@ hidden
 			"visgroupautoshown" "1"
 			"logicalpos" "[0 0]"
 		}
-	}
-}
-entity
-{
-	"id" "8259"
-	"classname" "info_player_start"
-	"angles" "0 0 0"
-	"marineprofile" "-1"
-	"origin" "-4984.92 5129.26 32"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupid" "19"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 -12768]"
-	}
-}
-entity
-{
-	"id" "8466"
-	"classname" "info_player_start"
-	"angles" "0 0 0"
-	"marineprofile" "-1"
-	"origin" "135.082 5129.26 32"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupid" "19"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 -12768]"
-	}
-}
-entity
-{
-	"id" "8673"
-	"classname" "info_player_start"
-	"angles" "0 0 0"
-	"marineprofile" "-1"
-	"origin" "5255.08 5129.26 32"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupid" "19"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 -12768]"
-	}
-}
-entity
-{
-	"id" "8880"
-	"classname" "info_player_start"
-	"angles" "0 0 0"
-	"marineprofile" "-1"
-	"origin" "5255.08 9.25977 32"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupid" "19"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 -12768]"
-	}
-}
-entity
-{
-	"id" "9087"
-	"classname" "info_player_start"
-	"angles" "0 0 0"
-	"marineprofile" "-1"
-	"origin" "5255.08 -5110.74 32"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupid" "19"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 -12768]"
-	}
-}
-entity
-{
-	"id" "9294"
-	"classname" "info_player_start"
-	"angles" "0 0 0"
-	"marineprofile" "-1"
-	"origin" "135.082 -5110.74 32"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupid" "19"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 -12768]"
-	}
-}
-entity
-{
-	"id" "9708"
-	"classname" "info_player_start"
-	"angles" "0 0 0"
-	"marineprofile" "-1"
-	"origin" "-4984.92 -5110.74 32"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupid" "19"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 -12768]"
-	}
-}
-entity
-{
-	"id" "9915"
-	"classname" "info_player_start"
-	"angles" "0 0 0"
-	"marineprofile" "-1"
-	"origin" "-4984.92 9.25977 32"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupid" "19"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 -12768]"
 	}
 }
 entity

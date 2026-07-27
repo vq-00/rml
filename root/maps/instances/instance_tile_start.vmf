@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "16"
+	"mapversion" "18"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "16"
+	"mapversion" "18"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -4402,6 +4402,134 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "479"
+	"classname" "info_player_start"
+	"angles" "0 270 0"
+	"marineprofile" "-1"
+	"targetname" "scenery_tile_start"
+	"origin" "-80 -52 -63"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "487"
+	"classname" "info_player_start"
+	"angles" "0 270 0"
+	"marineprofile" "-1"
+	"targetname" "scenery_tile_start"
+	"origin" "-152 -8 -63"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "495"
+	"classname" "info_player_start"
+	"angles" "0 270 0"
+	"marineprofile" "-1"
+	"targetname" "scenery_tile_start"
+	"origin" "84 72 -63"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "499"
+	"classname" "info_player_start"
+	"angles" "0 270 0"
+	"marineprofile" "-1"
+	"targetname" "scenery_tile_start"
+	"origin" "76 -44 -63"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "501"
+	"classname" "info_player_start"
+	"angles" "0 270 0"
+	"marineprofile" "-1"
+	"targetname" "scenery_tile_start"
+	"origin" "20 -4 -63"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "503"
+	"classname" "info_player_start"
+	"angles" "0 270 0"
+	"marineprofile" "-1"
+	"targetname" "scenery_tile_start"
+	"origin" "-104 64 -63"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "505"
+	"classname" "info_player_start"
+	"angles" "0 270 0"
+	"marineprofile" "-1"
+	"targetname" "scenery_tile_start"
+	"origin" "-52 12 -63"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "507"
+	"classname" "info_player_start"
+	"angles" "0 270 0"
+	"marineprofile" "-1"
+	"targetname" "scenery_tile_start"
+	"origin" "8 72 -63"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
 	}
 }
 cameras

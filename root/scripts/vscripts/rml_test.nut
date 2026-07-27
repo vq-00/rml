@@ -438,8 +438,12 @@ function DeleteMap()
 	DoEntFire( "tile_*", "Kill", "", 0.0, null, null );
 	DoEntFire( "asw_objective_*", "SetIncomplete", "", 0.0, null, null );
 	DoEntFire( "asw_marker", "SetIncomplete", "", 0.0, null, null );
+	DoEntFire( "asw_marker", "Disable", "", 0.0, null, null );
 	DoEntFire( "counter_*", "SetValue", "0", 0.0, null, null );
 	DoEntFire( "objmarker_escape", "Disable", "", 0.0, null, null );
+	DoEntFire( "info_player_start", "Kill", "", 0.0, null, null );
+	
+	Convars.ExecuteConCommand( "asw_clearhouse" );
 	
 	foreach ( strNode, hNode in Nodes_t )
 		hNode.ClearLinks();
@@ -452,7 +456,7 @@ function SpawnMap( nSeed = -1 )
 	DeleteMap();
 	
 	// need a delay for the engine to free previous edicts properly
-	EntFireByHandle( hSelf, "RunScriptCode", "newthread( _SpawnMap ).call( " + nSeed.tostring() + " );", 0.03, null, null );
+	EntFireByHandle( hSelf, "RunScriptCode", "local nSeed = " + nSeed.tostring() + ";while( !newthread( _SpawnMap ).call( nSeed ) ){ ClientPrint( null, 3, \"Failed to spawn map with seed \" + nSeed.tostring() + \", retrying with random seed\" ); nSeed = RandomHQUniformIntDistribution( 100000, 999999 ) };", 0.03, null, null );
 	EntFireByHandle( hSelf, "RunScriptCode", "newthread( BuildNavigation ).call();", 0.08, null, null );
 	DoEntFire( "clip_tile_*", "Kill", "", 0.1, null, null );
 }
@@ -479,13 +483,13 @@ function _SpawnMap( nSeed )
 	//local BranchLayout_t = newthread( CreateBranchLayout ).call( LayoutBase_t, 3, 3, 6, 3, 1, 6 );
 	local BranchLayout_t = CreateDeadBranchLayout( LayoutBase_t, 3, 1, 3 );
 	if ( !BranchLayout_t )
-		return ClientPrint( null, 3, "failed to create a deadbranch layout after 10000 tries" );
+		return ClientPrint( null, 3, "failed to create a deadbranch layout after 1000 tries" );
 		
 	PrintLayout( BranchLayout_t );
 		
 	BranchLayout_t = CreateAliveBranchLayout( LayoutBase_t, BranchLayout_t, 2, 1, 4 );
 	if ( !BranchLayout_t )
-		return ClientPrint( null, 3, "failed to create a alivebranch layout after 10000 tries" );
+		return ClientPrint( null, 3, "failed to create a alivebranch layout after 1000 tries" );
 	
 	PrintLayout( LayoutBase_t );
 	printl( "------" );
@@ -504,53 +508,47 @@ function _SpawnMap( nSeed )
 	
 	//EntFireByHandle( hSelf, "RunScriptCode", "BuildNavigation();", 0.05, null, null );
 	
-	// spawn players on start tile
-	local vecStart = GetStartAndEndTilePos( LayoutBase_t )[0];
-	local vecStartWorld = GetTileWorldCoordinates( vecStart.x, vecStart.y );
+	EntFireByHandle( hSelf, "RunScriptCode", "MapPostSpawn()", 0.0, null, null );
 	
-	local hMarine = null;
-	while ( hMarine = Entities.FindByClassname( hMarine, "asw_marine" ) )
-	{
-		hMarine.SetOrigin( vecStartWorld + Vector( 0.0, 0.0, 64.0 ) );
-		NetProps.SetPropFloat( hMarine.GetCommander(), "m_flMovementAxisYaw", GetTileRotation( -1, -1, LayoutBase_t[ vecStart.y ][ vecStart.x ], ' ' ) - 90.0 );
-	}
-	
-	EntFireByHandle( hSelf, "RunScriptCode", "MapPostSpawn()", 1.0, null, null );
+	return true;
 }
 
 function MapPostSpawn()
 {
+	local hMarker = null;
+	
 	local nCompAreas = 0;
 	local hCompArea = null;
 	while ( hCompArea = Entities.FindByClassname( hCompArea, "trigger_asw_computer_area" ) )
 	{
 		nCompAreas++;
-		local hMarker = Entities.FindByName( null, "objmarker_hacks" );
-		DoEntFire( "objmarker_hacks", "Enable", "", 0.0, null, null );
+		hMarker = Entities.FindByName( hMarker, "objmarker_hacks" );
+		EntFireByHandle( hMarker, "Enable", "", 0.0, null, null );
 		hMarker.SetOrigin( hCompArea.GetOrigin() );
-		hMarker.SetName( "objmarker_nameless_for_now" );
+		//hMarker.SetName( "objmarker_nameless_for_now" );
 	}
 	
 	DoEntFire( "obj_hacks_real", "SetMaxProgress", nCompAreas.tostring(), 0.0, null, null );
 	DoEntFire( "counter_hacks", "addoutput", "max " + nCompAreas.tostring(), 0.0, null, null );
-	DoEntFire( "objmarker_hacks", "Disable", "", 0.05, null, null );
-	DoEntFire( "objmarker_nameless_for_now", "RunScriptCode", "self.SetName( \"objmarker_hacks\" )", 0.10, null, null );
+	//DoEntFire( "objmarker_hacks", "Disable", "", 0.05, null, null );
+	//DoEntFire( "objmarker_nameless_for_now", "RunScriptCode", "self.SetName( \"objmarker_hacks\" )", 0.10, null, null );
 	
+	hMarker = null;
 	local nButtAreas = 0;
 	local hButtArea = null;
 	while ( hButtArea = Entities.FindByClassname( hButtArea, "trigger_asw_button_area" ) )
 	{
 		nButtAreas++;
-		local hMarker = Entities.FindByName( null, "objmarker_power" );
-		DoEntFire( "objmarker_power", "Enable", "", 0.0, null, null );
+		hMarker = Entities.FindByName( hMarker, "objmarker_power" );
+		EntFireByHandle( hMarker, "Enable", "", 0.0, null, null );
 		hMarker.SetOrigin( hButtArea.GetOrigin() );
-		hMarker.SetName( "objmarker_nameless_for_now2" );
+		//hMarker.SetName( "objmarker_nameless_for_now2" );
 	}
 	
 	DoEntFire( "obj_power", "SetMaxProgress", nButtAreas.tostring(), 0.0, null, null );
 	DoEntFire( "counter_power", "addoutput", "max " + nButtAreas.tostring(), 0.0, null, null );
-	DoEntFire( "objmarker_power", "Disable", "", 0.05, null, null );
-	DoEntFire( "objmarker_nameless_for_now2", "RunScriptCode", "self.SetName( \"objmarker_power\" )", 0.10, null, null );
+	//DoEntFire( "objmarker_power", "Disable", "", 0.05, null, null );
+	//DoEntFire( "objmarker_nameless_for_now2", "RunScriptCode", "self.SetName( \"objmarker_power\" )", 0.10, null, null );
 	
 	DoEntFire( "objmarker_escape", "RunScriptCode", "self.SetOrigin( Entities.FindByClassname( null, \"trigger_asw_door_area\" ).GetOrigin() )", 0.0, null, null );
 	
@@ -560,8 +558,6 @@ function MapPostSpawn()
 	{
 		nLaser++;
 		
-		EntFireByHandle( hLaser, "ClearParent", "", 0.0, null, null );
-		
 		local hTarget = Entities.FindByClassnameNearest( "info_target", hLaser.GetOrigin(), 512.0 );
 		hTarget.SetName( "lasertarget_" + nLaser.tostring() );
 		
@@ -569,11 +565,29 @@ function MapPostSpawn()
 		
 		EntFireByHandle( hLaser, "TurnOn", "", 0.0, null, null );
 	}
+	
+	// spawn players on start tile
+	local LayoutBase_t = MapInfo_t[0];
+	local vecStart = GetStartAndEndTilePos( LayoutBase_t )[0];
+	local fMarineStartRotation = GetTileRotation( -1, -1, LayoutBase_t[ vecStart.y ][ vecStart.x ], ' ' ) - 90.0;
+	
+	local hMarine = null;
+	local hStart = null;
+	while ( hMarine = Entities.FindByClassname( hMarine, "asw_marine" ) )
+	{
+		hStart = Entities.FindByClassname( hStart, "info_player_start" );
+		hMarine.SetOrigin( hStart.GetOrigin() );
+		NetProps.SetPropFloat( hMarine.GetCommander(), "m_flMovementAxisYaw", fMarineStartRotation );
+	}
 }
 
-function OnGameplayStart() 
+function OnGameplayStart()
 {
-	SpawnMap();
+	local vecStart = GetStartAndEndTilePos( MapInfo_t[0] )[0];
+	local fMarineStartRotation = GetTileRotation( -1, -1, MapInfo_t[0][ vecStart.y ][ vecStart.x ], ' ' ) - 90.0;
+	local hMarine = null;
+	while ( hMarine = Entities.FindByClassname( hMarine, "asw_marine" ) )
+		NetProps.SetPropFloat( hMarine.GetCommander(), "m_flMovementAxisYaw", fMarineStartRotation );
 }
 
 hSelf <- self;
@@ -586,3 +600,5 @@ foreach( strVar, pVar in self.GetScriptScope() )
 	//if ( typeof( pVar ) == "function" || typeof( pVar ) == "table" || typeof( pVar ) == "array" )
 		getroottable()[ strVar ] <- pVar;
 }
+
+SpawnMap();

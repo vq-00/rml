@@ -342,7 +342,7 @@ function GetNearbySeperatePathTile( LayoutBase_t, BranchLayout_t, x, y )
 // "alive" branches are those that connect back to main path, resulting in two different paths to one place
 function CreateDeadBranchLayout( Layout_t, nBranchesDead, nBranchDeadLengthMin, nBranchDeadLengthMax, nFailCount = 0 )
 {
-	if ( nFailCount > 10000 )
+	if ( nFailCount > 1000 )
 		return null;
 	
 	local nSizeY = Layout_t.len();
@@ -447,7 +447,7 @@ function CreateDeadBranchLayout( Layout_t, nBranchesDead, nBranchDeadLengthMin, 
 
 function CreateAliveBranchLayout( Layout_t, BranchLayout_t, nBranchesAlive, nBranchAliveLengthMin, nBranchAliveLengthMax, nFailCount = 0 )
 {
-	if ( nFailCount > 10000 )
+	if ( nFailCount > 1000 )
 		return null;
 	
 	local nSizeY = Layout_t.len();

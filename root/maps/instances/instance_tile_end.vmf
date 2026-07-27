@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "41"
+	"mapversion" "43"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "41"
+	"mapversion" "43"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -22852,7 +22852,7 @@ entity
 	"Solidity" "0"
 	"spawnflags" "2"
 	"StartDisabled" "0"
-	"targetname" "clip_tile_start"
+	"targetname" "clip_tile_end"
 	"vrad_brush_cast_shadows" "0"
 	solid
 	{
@@ -29763,6 +29763,8 @@ entity
 	"spawnflags" "2"
 	"targetname" "template_tile_end"
 	"Template01" "tile_end"
+	"Template02" "scenery_tile_end"
+	"Template03" "clip_tile_end"
 	"origin" "80 42.7598 448"
 	editor
 	{
