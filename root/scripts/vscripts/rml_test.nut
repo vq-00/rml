@@ -592,7 +592,7 @@ function MapPostSpawn()
 	}
 	
 	local hPropPhysics = null;
-	while ( hPropPhysics = Entities.FindByClassname( null, "prop_physics" ) )
+	while ( hPropPhysics = Entities.FindByClassname( hPropPhysics, "prop_physics" ) )
 	{
 		EntFireByHandle( hPropPhysics, "ClearParent", "", 1.0, null, null );
 		EntFireByHandle( hPropPhysics, "EnableMotion", "", 1.05, null, null );
