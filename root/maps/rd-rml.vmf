@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "516"
+	"mapversion" "519"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -44,6 +44,12 @@ visgroups
 		"visgroupid" "22"
 		"color" "121 110 103"
 	}
+	visgroup
+	{
+		"name" "clip_base"
+		"visgroupid" "23"
+		"color" "193 102 255"
+	}
 }
 viewsettings
 {
@@ -56,7 +62,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "516"
+	"mapversion" "519"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -411,6 +417,7 @@ world
 		{
 			"color" "0 199 196"
 			"visgroupid" "19"
+			"visgroupid" "23"
 			"visgroupshown" "1"
 			"visgroupautoshown" "1"
 		}
@@ -1489,6 +1496,7 @@ world
 		{
 			"color" "0 199 196"
 			"visgroupid" "19"
+			"visgroupid" "23"
 			"visgroupshown" "1"
 			"visgroupautoshown" "1"
 		}
@@ -1566,6 +1574,7 @@ world
 		{
 			"color" "0 199 196"
 			"visgroupid" "19"
+			"visgroupid" "23"
 			"visgroupshown" "1"
 			"visgroupautoshown" "1"
 		}
@@ -1643,6 +1652,7 @@ world
 		{
 			"color" "0 199 196"
 			"visgroupid" "19"
+			"visgroupid" "23"
 			"visgroupshown" "1"
 			"visgroupautoshown" "1"
 		}

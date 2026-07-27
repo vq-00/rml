@@ -456,9 +456,9 @@ function SpawnMap( nSeed = -1 )
 	DeleteMap();
 	
 	// need a delay for the engine to free previous edicts properly
-	EntFireByHandle( hSelf, "RunScriptCode", "local nSeed = " + nSeed.tostring() + ";while( !newthread( _SpawnMap ).call( nSeed ) ){ ClientPrint( null, 3, \"Failed to spawn map with seed \" + nSeed.tostring() + \", retrying with random seed\" ); nSeed = RandomHQUniformIntDistribution( 100000, 999999 ) };", 0.03, null, null );
-	EntFireByHandle( hSelf, "RunScriptCode", "newthread( BuildNavigation ).call();", 0.08, null, null );
-	DoEntFire( "clip_tile_*", "Kill", "", 0.1, null, null );
+	EntFireByHandle( hSelf, "RunScriptCode", "local nSeed = " + nSeed.tostring() + ";while( !newthread( _SpawnMap ).call( nSeed ) ){ ClientPrint( null, 3, \"Failed to spawn map with seed \" + nSeed.tostring() + \", retrying with random seed\" ); nSeed = RandomHQUniformIntDistribution( 100000, 999999 ) };", 0.2, null, null );
+	EntFireByHandle( hSelf, "RunScriptCode", "newthread( BuildNavigation ).call();", 0.25, null, null );
+	DoEntFire( "clip_tile_*", "Kill", "", 0.3, null, null );
 }
 
 function _SpawnMap( nSeed )
