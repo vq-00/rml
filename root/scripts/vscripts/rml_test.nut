@@ -311,7 +311,11 @@ function GetTileVariants( strTile, bRecompute = true )
 		if ( strName.len() < strTile.len() || strTile != strName.slice( 0, strTile.len() ) )
 			continue;
 			
-		TileVariants_t[ strTile ].push( strName.slice( strTile.len() ) );
+		local nSpawnWeight = hTemplate.GetHealth();
+		if ( !nSpawnWeight )
+			nSpawnWeight = 100;
+			
+		TileVariants_t[ strTile ].push( [ strName.slice( strTile.len() ), nSpawnWeight ] );
 	}
 	
 	return TileVariants_t[ strTile ];
@@ -321,8 +325,25 @@ function PickRandomTileVariant( Variants_t )
 {
 	if ( !Variants_t.len() )
 		return "";
+		
+	if ( Variants_t.len() == 1 )
+		return Variants_t[0][0];
 	
-	return Variants_t[ RandomHQUniformIntDistribution( 0, Variants_t.len() - 1 ) ];
+	local nTotalWeight = 0;
+	for ( local i = 0; i < Variants_t.len(); i++ )
+		nTotalWeight += Variants_t[i][1];
+		
+	local nRand = RandomHQUniformIntDistribution( 0, nTotalWeight );
+	local nCurWeight = 0;
+	for ( local i = 0; i < Variants_t.len(); i++ )
+	{
+		nCurWeight += Variants_t[i][1];
+		
+		if ( nCurWeight >= nRand )
+			return Variants_t[i][0];
+	}
+	
+	return Variants_t.pop()[0];
 }
 
 function BuildLayout( Layout_t )

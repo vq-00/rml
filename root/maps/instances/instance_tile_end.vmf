@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "40"
+	"mapversion" "41"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "40"
+	"mapversion" "41"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -30471,7 +30471,7 @@ entity
 {
 	"id" "11347"
 	"classname" "asw_trigger_fall"
-	"origin" "0 -592 24"
+	"origin" "0 -580 24"
 	"spawnflags" "2"
 	"StartDisabled" "0"
 	"targetname" "scenery_tile_end"
@@ -30481,7 +30481,7 @@ entity
 		side
 		{
 			"id" "4958"
-			"plane" "(-120 -568 112) (120 -568 112) (120 -616 112)"
+			"plane" "(-120 -592 112) (-120 -568 112) (120 -568 112)"
 			"material" "TOOLS/TOOLSTRIGGER"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
@@ -30492,7 +30492,7 @@ entity
 		side
 		{
 			"id" "4957"
-			"plane" "(-120 -616 -64) (120 -616 -64) (120 -568 -64)"
+			"plane" "(-120 -568 -64) (-120 -592 -64) (120 -592 -64)"
 			"material" "TOOLS/TOOLSTRIGGER"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
@@ -30503,7 +30503,7 @@ entity
 		side
 		{
 			"id" "4956"
-			"plane" "(-120 -568 112) (-120 -616 112) (-120 -616 -64)"
+			"plane" "(-120 -592 -64) (-120 -568 -64) (-120 -568 112)"
 			"material" "TOOLS/TOOLSTRIGGER"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -30514,7 +30514,7 @@ entity
 		side
 		{
 			"id" "4955"
-			"plane" "(120 -568 -64) (120 -616 -64) (120 -616 112)"
+			"plane" "(120 -568 -64) (120 -592 -64) (120 -592 112)"
 			"material" "TOOLS/TOOLSTRIGGER"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -30525,7 +30525,7 @@ entity
 		side
 		{
 			"id" "4954"
-			"plane" "(120 -568 112) (-120 -568 112) (-120 -568 -64)"
+			"plane" "(-120 -568 -64) (120 -568 -64) (120 -568 112)"
 			"material" "TOOLS/TOOLSTRIGGER"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -30536,7 +30536,7 @@ entity
 		side
 		{
 			"id" "4953"
-			"plane" "(120 -616 -64) (-120 -616 -64) (-120 -616 112)"
+			"plane" "(120 -592 -64) (-120 -592 -64) (-120 -592 112)"
 			"material" "TOOLS/TOOLSTRIGGER"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
