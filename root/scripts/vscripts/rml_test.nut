@@ -54,6 +54,15 @@ function PlaceTileInPlace( x, y, fRotate, strTile )
 			
 		hScenery.SetParent( hNewTile );
 		
+		// disable props/brushes that could block node links from generating
+		if ( !( NetProps.GetPropInt( hScenery, "m_Collision.m_usSolidFlags" ) & 4 ) )
+		{
+			EntFireByHandle( hScenery, "Disable", "", 0.0, null, null );
+			EntFireByHandle( hScenery, "DisableCollision", "", 0.0, null, null );
+			EntFireByHandle( hScenery, "Enable", "", 0.5, null, null );
+			EntFireByHandle( hScenery, "EnableCollision", "", 0.5, null, null );
+		}
+		
 		// spawners are cool kids gangsters mafia members who dont want to have parents
 		if ( hScenery.GetClassname() != "asw_spawner" )
 			continue;
@@ -437,11 +446,13 @@ function DeleteMap()
 	DoEntFire( "brush_acid*", "Disable", "", 0.0, null, null );
 	DoEntFire( "tile_*", "Kill", "", 0.0, null, null );
 	DoEntFire( "asw_objective_*", "SetIncomplete", "", 0.0, null, null );
+	DoEntFire( "obj_power", "SetVisible", "1", 0.0, null, null );
 	DoEntFire( "asw_marker", "SetIncomplete", "", 0.0, null, null );
 	DoEntFire( "asw_marker", "Disable", "", 0.0, null, null );
 	DoEntFire( "counter_*", "SetValue", "0", 0.0, null, null );
 	DoEntFire( "objmarker_escape", "Disable", "", 0.0, null, null );
 	DoEntFire( "info_player_start", "Kill", "", 0.0, null, null );
+	DoEntFire( "prop_physics", "Kill", "", 0.0, null, null );
 	
 	Convars.ExecuteConCommand( "asw_clearhouse" );
 	
@@ -508,7 +519,7 @@ function _SpawnMap( nSeed )
 	
 	//EntFireByHandle( hSelf, "RunScriptCode", "BuildNavigation();", 0.05, null, null );
 	
-	EntFireByHandle( hSelf, "RunScriptCode", "MapPostSpawn()", 0.0, null, null );
+	EntFireByHandle( hSelf, "RunScriptCode", "MapPostSpawn()", 0.1, null, null );
 	
 	return true;
 }
@@ -525,13 +536,10 @@ function MapPostSpawn()
 		hMarker = Entities.FindByName( hMarker, "objmarker_hacks" );
 		EntFireByHandle( hMarker, "Enable", "", 0.0, null, null );
 		hMarker.SetOrigin( hCompArea.GetOrigin() );
-		//hMarker.SetName( "objmarker_nameless_for_now" );
 	}
 	
 	DoEntFire( "obj_hacks_real", "SetMaxProgress", nCompAreas.tostring(), 0.0, null, null );
 	DoEntFire( "counter_hacks", "addoutput", "max " + nCompAreas.tostring(), 0.0, null, null );
-	//DoEntFire( "objmarker_hacks", "Disable", "", 0.05, null, null );
-	//DoEntFire( "objmarker_nameless_for_now", "RunScriptCode", "self.SetName( \"objmarker_hacks\" )", 0.10, null, null );
 	
 	hMarker = null;
 	local nButtAreas = 0;
@@ -542,13 +550,16 @@ function MapPostSpawn()
 		hMarker = Entities.FindByName( hMarker, "objmarker_power" );
 		EntFireByHandle( hMarker, "Enable", "", 0.0, null, null );
 		hMarker.SetOrigin( hButtArea.GetOrigin() );
-		//hMarker.SetName( "objmarker_nameless_for_now2" );
 	}
 	
 	DoEntFire( "obj_power", "SetMaxProgress", nButtAreas.tostring(), 0.0, null, null );
 	DoEntFire( "counter_power", "addoutput", "max " + nButtAreas.tostring(), 0.0, null, null );
-	//DoEntFire( "objmarker_power", "Disable", "", 0.05, null, null );
-	//DoEntFire( "objmarker_nameless_for_now2", "RunScriptCode", "self.SetName( \"objmarker_power\" )", 0.10, null, null );
+	if ( nButtAreas == 0 )
+	{
+		DoEntFire( "obj_power", "SetVisible", "0", 0.0, null, null );
+		DoEntFire( "counter_power", "addoutput", "max 1", 0.0, null, null );
+		DoEntFire( "counter_power", "Add", "1", 0.0, null, null );
+	}
 	
 	DoEntFire( "objmarker_escape", "RunScriptCode", "self.SetOrigin( Entities.FindByClassname( null, \"trigger_asw_door_area\" ).GetOrigin() )", 0.0, null, null );
 	
@@ -579,6 +590,13 @@ function MapPostSpawn()
 		hMarine.SetOrigin( hStart.GetOrigin() );
 		NetProps.SetPropFloat( hMarine.GetCommander(), "m_flMovementAxisYaw", fMarineStartRotation );
 	}
+	
+	local hPropPhysics = null;
+	while ( hPropPhysics = Entities.FindByClassname( null, "prop_physics" ) )
+	{
+		EntFireByHandle( hPropPhysics, "ClearParent", "", 1.0, null, null );
+		EntFireByHandle( hPropPhysics, "EnableMotion", "", 1.05, null, null );
+	}
 }
 
 function OnGameplayStart()
@@ -587,7 +605,11 @@ function OnGameplayStart()
 	local fMarineStartRotation = GetTileRotation( -1, -1, MapInfo_t[0][ vecStart.y ][ vecStart.x ], ' ' ) - 90.0;
 	local hMarine = null;
 	while ( hMarine = Entities.FindByClassname( hMarine, "asw_marine" ) )
+	{
+		hMarine.__KeyValueFromString( "rendercolor", "255 120 255 255" );
+		
 		NetProps.SetPropFloat( hMarine.GetCommander(), "m_flMovementAxisYaw", fMarineStartRotation );
+	}
 }
 
 hSelf <- self;

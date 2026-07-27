@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "43"
+	"mapversion" "45"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "43"
+	"mapversion" "45"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -30567,7 +30567,7 @@ entity
 	"classname" "trigger_asw_door_area"
 	"origin" "0 0 24"
 	"playersrequired" "8"
-	"spawnflags" "2"
+	"spawnflags" "16"
 	"StartDisabled" "0"
 	"targetname" "scenery_tile_end"
 	"wait" "1"

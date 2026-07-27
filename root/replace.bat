@@ -1,4 +1,4 @@
-REM .\replace.bat file.ain v mv
+REM .\replace.bat rd-rml.ain v mv
 
 @echo off
 setlocal
