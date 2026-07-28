@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "60"
+	"mapversion" "67"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -14,13 +14,13 @@ viewsettings
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "2"
+	"nGridSpacing" "8"
 	"bShow3DGrid" "0"
 }
 world
 {
 	"id" "1"
-	"mapversion" "60"
+	"mapversion" "67"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -29302,6 +29302,7 @@ entity
 	"_zero_percent_distance" "0"
 	"angles" "90 0 0"
 	"pitch" "90"
+	"spawnflags" "0"
 	"style" "0"
 	"origin" "6 8 -224"
 	editor
@@ -29310,6 +29311,38 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2500 12000]"
+	}
+}
+entity
+{
+	"id" "30353"
+	"classname" "asw_ambient_generic"
+	"cspinup" "0"
+	"fadeinsecs" "0"
+	"fadeoutsecs" "0"
+	"health" "10"
+	"lfomodpitch" "0"
+	"lfomodvol" "0"
+	"lforate" "0"
+	"lfotype" "0"
+	"message" "ambient.atmosphere.corridor2"
+	"pitch" "100"
+	"pitchstart" "100"
+	"preset" "0"
+	"PreventStimMusicDuration" "0"
+	"radius" "544"
+	"spawnflags" "0"
+	"spindown" "0"
+	"spinup" "0"
+	"targetname" "scenery_tile_straight5"
+	"volstart" "10"
+	"origin" "0 0 32"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
 	}
 }
 cameras
