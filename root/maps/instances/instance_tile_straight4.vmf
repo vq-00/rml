@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "2"
+	"mapversion" "3"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "2"
+	"mapversion" "3"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -1047,10 +1047,10 @@ entity
 		{
 			"id" "1211"
 			"plane" "(96 -448 -96) (128 -448 -96) (128 -448 -64)"
-			"material" "TOOLS/TOOLSNODRAW"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 0 -1 0] 0.25"
-			"rotation" "0"
+			"material" "METAL/METALWALL_BTS_003A"
+			"uaxis" "[0 0 1 -128] 0.25"
+			"vaxis" "[1 0 0 384] 0.25"
+			"rotation" "90"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
 		}
@@ -1427,7 +1427,7 @@ entity
 		{
 			"id" "1241"
 			"plane" "(320 -448 -96) (-96 -448 -96) (-96 -448 -64)"
-			"material" "METAL/METALGRATE011A"
+			"material" "TOOLS/TOOLSNODRAW"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -1503,7 +1503,7 @@ entity
 		{
 			"id" "1247"
 			"plane" "(-96 -448 -96) (96 -448 -96) (96 -448 -64)"
-			"material" "METAL/METALGRATE011A"
+			"material" "TOOLS/TOOLSNODRAW"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -1731,8 +1731,8 @@ entity
 		{
 			"id" "1265"
 			"plane" "(448 -320 -96) (320 -320 -96) (320 -320 -64)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[1 0 0 448] 0.25"
+			"material" "TOOLS/TOOLSNODRAW"
+			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
@@ -6699,8 +6699,8 @@ entity
 		{
 			"id" "1653"
 			"plane" "(-320 64 -96) (-448 64 -96) (-448 64 -64)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[1 0 0 448] 0.25"
+			"material" "TOOLS/TOOLSNODRAW"
+			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"

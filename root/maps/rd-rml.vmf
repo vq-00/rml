@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "548"
+	"mapversion" "554"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -62,13 +62,13 @@ viewsettings
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "8"
+	"nGridSpacing" "256"
 	"bShow3DGrid" "0"
 }
 world
 {
 	"id" "1"
-	"mapversion" "548"
+	"mapversion" "554"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -101501,7 +101501,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_start.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "11264 9472 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -101517,7 +101517,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_turn1.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "11264 6912 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -101533,7 +101533,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_turn2.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "11264 5120 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -101549,7 +101549,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_turn3.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "11264 3328 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -101565,7 +101565,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_straight1.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "9472 6912 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -101581,7 +101581,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_straight2.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "9472 5120 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -101597,7 +101597,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_straight3.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "9472 3328 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -101613,7 +101613,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_straight4.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "9472 1536 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -101629,7 +101629,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_branchstart1.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "13056 6912 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -101645,7 +101645,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_branchstart2.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "13056 5120 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -101661,7 +101661,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_branchstart3.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "13056 3328 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -101677,7 +101677,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_branchstart4.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "13056 1536 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -101693,7 +101693,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_branchend1.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "14848 6912 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -101709,7 +101709,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_branchend2.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "14848 5120 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -101725,7 +101725,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_branchend3.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "14848 3328 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -101741,7 +101741,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_end.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "13056 9472 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -102915,7 +102915,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_turn4.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "11264 1536 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -112946,7 +112946,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_branchstart5.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "13056 -256 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -112962,7 +112962,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_straight5.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "9472 -256 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -112978,7 +112978,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_turn5.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "11264 -256 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -113929,7 +113929,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_straight6.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "9472 -2048 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -113945,7 +113945,7 @@ entity
 	"angles" "-0 0 0"
 	"file" "instances/instance_tile_straight7.vmf"
 	"fixup_style" "2"
-	"origin" "7040 7040 -4864"
+	"origin" "9472 -3840 -4864"
 	editor
 	{
 		"color" "220 30 220"
@@ -126937,6 +126937,22 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 11000]"
+	}
+}
+entity
+{
+	"id" "339624"
+	"classname" "func_instance"
+	"angles" "-0 0 0"
+	"file" "instances/instance_tile_straight8.vmf"
+	"fixup_style" "2"
+	"origin" "9472 -5632 -4864"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
 	}
 }
 cameras
