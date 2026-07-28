@@ -1,0 +1,9 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/painkiller/mutanemo/mutanemo"
+      	"$bumpmap" "models/painkiller/mutanemo/mutanemo_n" 
+	"$detail" "models/painkiller/mutanemo/mutanemo_light"
+	"$detailscale" "1"
+	"$detailblendmode" "5"
+  	"$phong" "1"
+}
