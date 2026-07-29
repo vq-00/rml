@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "61"
+	"mapversion" "62"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "61"
+	"mapversion" "62"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -20864,7 +20864,6 @@ entity
 {
 	"id" "205"
 	"classname" "point_template"
-	"health" "10000"
 	"spawnflags" "2"
 	"targetname" "template_tile_straight4"
 	"Template01" "tile_straight4"
