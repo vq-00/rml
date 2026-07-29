@@ -597,6 +597,30 @@ function MapPostSpawn()
 		EntFireByHandle( hPropPhysics, "ClearParent", "", 1.0, null, null );
 		EntFireByHandle( hPropPhysics, "EnableMotion", "", 1.05, null, null );
 	}
+
+	// Fix for func_movelinear parenting bug
+	//
+	// Probably should do it this way, but works for now:
+	// https://github.com/ReactiveDrop/reactivedrop_public_src/blob/reactivedrop_beta/src/game/server/func_movelinear.cpp#L100
+	// m_vecPosition1 = GetLocalOrigin() - (m_vecMoveDir * m_flMoveDistance * m_flStartPosition);
+	// m_vecPosition2 = m_vecPosition1 + (m_vecMoveDir * m_flMoveDistance);
+	// m_vecFinalDest = GetLocalOrigin();
+
+	local hMovelinear = null;
+	while ( hMovelinear = Entities.FindByClassname( hMovelinear, "func_movelinear" ) )
+	{
+		EntFireByHandle( hMovelinear, "ClearParent", "", 0.01, null, null );
+		local hMovelinearOrigin = hMovelinear.GetOrigin();
+		NetProps.SetPropVector( hMovelinear, "m_vecPosition1", hMovelinearOrigin );
+		local hMovelinearVecPos1 = NetProps.GetPropVector( hMovelinear, "m_vecPosition1" );
+
+		// doesnt work for some reason??? hardcode distance 20
+		//local hMovelinearDistance = NetProps.GetPropFloat( self, "m_flMoveDistance" );
+		//local hMovelinearVecPos2 = hMovelinearVecPos1 - Vector( 0, 0, hMovelinearDistance );
+
+		local hMovelinearVecPos2 = hMovelinearVecPos1 - Vector( 0, 0, 20 );
+		NetProps.SetPropVector( hMovelinear, "m_vecPosition2", hMovelinearVecPos2 );
+	}
 }
 
 function OnGameplayStart()
