@@ -598,6 +598,20 @@ function MapPostSpawn()
 		EntFireByHandle( hPropPhysics, "EnableMotion", "", 1.05, null, null );
 	}
 
+	local hPropAswBarrelExplosive = null;
+	while ( hPropAswBarrelExplosive = Entities.FindByClassname( hPropAswBarrelExplosive, "asw_barrel_explosive" ) )
+	{
+		EntFireByHandle( hPropAswBarrelExplosive, "ClearParent", "", 1.0, null, null );
+		EntFireByHandle( hPropAswBarrelExplosive, "EnableMotion", "", 1.05, null, null );
+	}
+
+	local hPropAswBarrelRadioactive = null;
+	while ( hPropAswBarrelRadioactive = Entities.FindByClassname( hPropAswBarrelRadioactive, "asw_barrel_radioactive" ) )
+	{
+		EntFireByHandle( hPropAswBarrelRadioactive, "ClearParent", "", 1.0, null, null );
+		EntFireByHandle( hPropAswBarrelRadioactive, "EnableMotion", "", 1.05, null, null );
+	}
+
 	// Fix for func_movelinear parenting bug
 	//
 	// Probably should do it this way, but works for now:
