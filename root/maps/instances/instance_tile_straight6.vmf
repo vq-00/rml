@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "38"
+	"mapversion" "42"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -14,13 +14,13 @@ viewsettings
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "8"
+	"nGridSpacing" "1"
 	"bShow3DGrid" "0"
 }
 world
 {
 	"id" "1"
-	"mapversion" "38"
+	"mapversion" "42"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -87,96 +87,6 @@ world
 		editor
 		{
 			"color" "220 30 220"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
-	group
-	{
-		"id" "1051"
-		editor
-		{
-			"color" "220 220 220"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
-	group
-	{
-		"id" "1072"
-		editor
-		{
-			"color" "220 220 220"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
-	group
-	{
-		"id" "4568"
-		editor
-		{
-			"color" "147 232 0"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
-	group
-	{
-		"id" "4569"
-		editor
-		{
-			"color" "147 232 0"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
-	group
-	{
-		"id" "4585"
-		editor
-		{
-			"color" "147 232 0"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
-	group
-	{
-		"id" "4601"
-		editor
-		{
-			"color" "147 232 0"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
-	group
-	{
-		"id" "4939"
-		editor
-		{
-			"color" "147 232 0"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
-	group
-	{
-		"id" "4985"
-		editor
-		{
-			"color" "147 232 0"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
-	group
-	{
-		"id" "11205"
-		editor
-		{
-			"color" "252 133 0"
 			"visgroupshown" "1"
 			"visgroupautoshown" "1"
 		}
@@ -18081,6 +17991,10 @@ entity
 	"Template01" "tile_straight6"
 	"Template02" "scenery_tile_straight6"
 	"Template03" "clip_tile_straight6"
+	connections
+	{
+		"OnEntitySpawned" "scenery_tile_straight6FireUser10-1"
+	}
 	"origin" "-148.239 68.73 448"
 	editor
 	{
@@ -20038,7 +19952,12 @@ entity
 	"speed" "140"
 	"targetname" "scenery_tile_straight6"
 	"totalsealtime" "10"
-	"origin" "-251 0 -63"
+	connections
+	{
+		"OnUser1" "!selfRunScriptCodeNetProps.SetPropVector(self,`m_vecClosedPosition`,self.GetOrigin())0.11"
+		"OnUser1" "!selfRunScriptCodeNetProps.SetPropVector(self,`m_vecOpenPosition`,Entities.FindByClassnameNearest(`info_target`,self.GetOrigin(),512.0).GetOrigin())0.11"
+	}
+	"origin" "-251 0 -65"
 	editor
 	{
 		"color" "220 30 220"
@@ -20198,6 +20117,7 @@ entity
 	"classname" "asw_pickup_pistol"
 	"angles" "69.5 270 -90"
 	"BulletsInGun" "8"
+	"ClassRequirementOverride" "-1"
 	"Clips" "10"
 	"fademindist" "-1"
 	"fadescale" "1"
@@ -20207,7 +20127,7 @@ entity
 	"origin" "-502.812 -13.154 -16"
 	editor
 	{
-		"color" "0 228 121"
+		"color" "0 0 200"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -11768]"
@@ -20219,6 +20139,7 @@ entity
 	"classname" "asw_pickup_pistol"
 	"angles" "69.5 270 -90"
 	"BulletsInGun" "8"
+	"ClassRequirementOverride" "-1"
 	"Clips" "10"
 	"fademindist" "-1"
 	"fadescale" "1"
@@ -20228,7 +20149,7 @@ entity
 	"origin" "-502.812 3.846 -16"
 	editor
 	{
-		"color" "0 188 225"
+		"color" "0 0 200"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -11768]"
@@ -20240,6 +20161,7 @@ entity
 	"classname" "asw_pickup_rifle"
 	"angles" "0 270 -90"
 	"BulletsInGun" "50"
+	"ClassRequirementOverride" "-1"
 	"Clips" "1"
 	"disableshadows" "0"
 	"fademaxdist" "0"
@@ -20252,7 +20174,7 @@ entity
 	"origin" "-505.812 35.846 -12"
 	editor
 	{
-		"color" "0 202 207"
+		"color" "0 0 200"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -11768]"
@@ -20264,6 +20186,7 @@ entity
 	"classname" "asw_pickup_rifle"
 	"angles" "0 270 -90"
 	"BulletsInGun" "50"
+	"ClassRequirementOverride" "-1"
 	"Clips" "1"
 	"disableshadows" "0"
 	"fademaxdist" "0"
@@ -20276,7 +20199,7 @@ entity
 	"origin" "-505.812 43.846 -12"
 	editor
 	{
-		"color" "0 108 209"
+		"color" "0 0 200"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -11768]"
@@ -20288,6 +20211,7 @@ entity
 	"classname" "asw_pickup_rifle"
 	"angles" "0 270 -90"
 	"BulletsInGun" "50"
+	"ClassRequirementOverride" "-1"
 	"Clips" "1"
 	"disableshadows" "0"
 	"fademaxdist" "0"
@@ -20300,7 +20224,7 @@ entity
 	"origin" "-505.812 51.846 -12"
 	editor
 	{
-		"color" "0 138 255"
+		"color" "0 0 200"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -11768]"
@@ -20312,6 +20236,7 @@ entity
 	"classname" "asw_pickup_shotgun"
 	"angles" "0 270 -90"
 	"BulletsInGun" "1"
+	"ClassRequirementOverride" "-1"
 	"Clips" "1"
 	"fademindist" "-1"
 	"fadescale" "1"
@@ -20321,7 +20246,7 @@ entity
 	"origin" "-505.812 -44.154 -12"
 	editor
 	{
-		"color" "0 204 157"
+		"color" "0 0 200"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -11768]"
@@ -20333,6 +20258,7 @@ entity
 	"classname" "asw_pickup_shotgun"
 	"angles" "0 270 -90"
 	"BulletsInGun" "1"
+	"ClassRequirementOverride" "-1"
 	"Clips" "1"
 	"fademindist" "-1"
 	"fadescale" "1"
@@ -20342,7 +20268,7 @@ entity
 	"origin" "-505.812 -52.154 -12"
 	editor
 	{
-		"color" "0 186 151"
+		"color" "0 0 200"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -11768]"
@@ -20354,6 +20280,7 @@ entity
 	"classname" "asw_pickup_shotgun"
 	"angles" "0 270 -90"
 	"BulletsInGun" "1"
+	"ClassRequirementOverride" "-1"
 	"Clips" "1"
 	"fademindist" "-1"
 	"fadescale" "1"
@@ -20363,10 +20290,25 @@ entity
 	"origin" "-505.812 -60.154 -12"
 	editor
 	{
-		"color" "0 192 125"
+		"color" "0 0 200"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 -11768]"
+	}
+}
+entity
+{
+	"id" "11732"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"targetname" "scenery_tile_straight6"
+	"origin" "-251 124 -65"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
 	}
 }
 cameras

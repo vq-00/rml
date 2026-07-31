@@ -444,6 +444,7 @@ foreach ( strNode, hNode in Nodes_t )
 function DeleteMap()
 {
 	DoEntFire( "brush_acid*", "Disable", "", 0.0, null, null );
+	DoEntFire( "scenery_tile_*", "Kill", "", 0.0, null, null );
 	DoEntFire( "tile_*", "Kill", "", 0.0, null, null );
 	DoEntFire( "asw_objective_*", "SetIncomplete", "", 0.0, null, null );
 	DoEntFire( "obj_power", "SetVisible", "1", 0.0, null, null );
@@ -451,8 +452,8 @@ function DeleteMap()
 	DoEntFire( "asw_marker", "Disable", "", 0.0, null, null );
 	DoEntFire( "counter_*", "SetValue", "0", 0.0, null, null );
 	DoEntFire( "objmarker_escape", "Disable", "", 0.0, null, null );
-	DoEntFire( "info_player_start", "Kill", "", 0.0, null, null );
-	DoEntFire( "prop_physics", "Kill", "", 0.0, null, null );
+	//DoEntFire( "info_player_start", "Kill", "", 0.0, null, null );
+	//DoEntFire( "prop_physics", "Kill", "", 0.0, null, null );
 	
 	Convars.ExecuteConCommand( "asw_clearhouse" );
 	
@@ -465,6 +466,9 @@ MapInfo_t <- [];
 function SpawnMap( nSeed = -1 )
 {
 	DeleteMap();
+	
+	if ( nSeed == -1 )
+		nSeed = RandomInt( 100000, 999999 );
 	
 	// need a delay for the engine to free previous edicts properly
 	EntFireByHandle( hSelf, "RunScriptCode", "local nSeed = " + nSeed.tostring() + ";while( !newthread( _SpawnMap ).call( nSeed ) ){ ClientPrint( null, 3, \"Failed to spawn map with seed \" + nSeed.tostring() + \", retrying with random seed\" ); nSeed = RandomHQUniformIntDistribution( 100000, 999999 ) };", 0.2, null, null );
@@ -610,30 +614,6 @@ function MapPostSpawn()
 	{
 		EntFireByHandle( hPropAswBarrelRadioactive, "ClearParent", "", 1.0, null, null );
 		EntFireByHandle( hPropAswBarrelRadioactive, "EnableMotion", "", 1.05, null, null );
-	}
-
-	// Fix for func_movelinear parenting bug
-	//
-	// Probably should do it this way, but works for now:
-	// https://github.com/ReactiveDrop/reactivedrop_public_src/blob/reactivedrop_beta/src/game/server/func_movelinear.cpp#L100
-	// m_vecPosition1 = GetLocalOrigin() - (m_vecMoveDir * m_flMoveDistance * m_flStartPosition);
-	// m_vecPosition2 = m_vecPosition1 + (m_vecMoveDir * m_flMoveDistance);
-	// m_vecFinalDest = GetLocalOrigin();
-
-	local hMovelinear = null;
-	while ( hMovelinear = Entities.FindByClassname( hMovelinear, "func_movelinear" ) )
-	{
-		EntFireByHandle( hMovelinear, "ClearParent", "", 0.01, null, null );
-		local hMovelinearOrigin = hMovelinear.GetOrigin();
-		NetProps.SetPropVector( hMovelinear, "m_vecPosition1", hMovelinearOrigin );
-		local hMovelinearVecPos1 = NetProps.GetPropVector( hMovelinear, "m_vecPosition1" );
-
-		// doesnt work for some reason??? hardcode distance 20
-		//local hMovelinearDistance = NetProps.GetPropFloat( self, "m_flMoveDistance" );
-		//local hMovelinearVecPos2 = hMovelinearVecPos1 - Vector( 0, 0, hMovelinearDistance );
-
-		local hMovelinearVecPos2 = hMovelinearVecPos1 - Vector( 0, 0, 20 );
-		NetProps.SetPropVector( hMovelinear, "m_vecPosition2", hMovelinearVecPos2 );
 	}
 }
 
