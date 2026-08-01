@@ -550,6 +550,9 @@ function MapPostSpawn()
 	local hButtArea = null;
 	while ( hButtArea = Entities.FindByClassname( hButtArea, "trigger_asw_button_area" ) )
 	{
+		if ( hButtArea.GetName() != "scenery_tile_turn1" )
+			continue;
+		
 		nButtAreas++;
 		hMarker = Entities.FindByName( hMarker, "objmarker_power" );
 		EntFireByHandle( hMarker, "Enable", "", 0.0, null, null );
