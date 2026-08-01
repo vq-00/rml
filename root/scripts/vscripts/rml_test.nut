@@ -631,6 +631,22 @@ function OnGameplayStart()
 		DoEntFire( hMarine.GetName() + "_weapon", "addoutput", "rendercolor 255 150 255 255", 0.0, null, null );
 		
 		NetProps.SetPropFloat( hMarine.GetCommander(), "m_flMovementAxisYaw", fMarineStartRotation );
+		
+		hMarine.ValidateScriptScope();
+		hMarine.GetScriptScope().RMLThink <- function()
+		{
+			if ( !self || !self.IsValid() )
+				return;
+				
+			local hGround = NetProps.GetPropEntity( self, "m_hGroundEntity" );
+			local strGroundName = hGround ? hGround.GetName() : ""
+			if ( strGroundName.len() > ("brush_acid").len() && strGroundName.slice( 0, ("brush_acid").len() ) == "brush_acid" )
+				self.TakeDamage( 5.0, 262144, null );
+			
+			EntFireByHandle( self, "RunScriptCode", "RMLThink()", 0.1, null, null );
+		}
+		
+		hMarine.GetScriptScope().RMLThink();
 	}
 }
 

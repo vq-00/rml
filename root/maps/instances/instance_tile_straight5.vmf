@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "68"
+	"mapversion" "70"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "68"
+	"mapversion" "70"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -29549,7 +29549,7 @@ entity
 	"rendermode" "0"
 	"SetBodyGroup" "0"
 	"skin" "0"
-	"solid" "6"
+	"solid" "0"
 	"spawnflags" "0"
 	"StartDisabled" "0"
 	"targetname" "scenery_tile_straight5"
@@ -29587,7 +29587,7 @@ entity
 	"rendermode" "0"
 	"SetBodyGroup" "0"
 	"skin" "0"
-	"solid" "6"
+	"solid" "0"
 	"spawnflags" "0"
 	"StartDisabled" "0"
 	"targetname" "scenery_tile_straight5"
@@ -29625,7 +29625,7 @@ entity
 	"rendermode" "0"
 	"SetBodyGroup" "0"
 	"skin" "0"
-	"solid" "6"
+	"solid" "0"
 	"spawnflags" "0"
 	"StartDisabled" "0"
 	"targetname" "scenery_tile_straight5"
@@ -29663,7 +29663,7 @@ entity
 	"rendermode" "0"
 	"SetBodyGroup" "0"
 	"skin" "0"
-	"solid" "6"
+	"solid" "0"
 	"spawnflags" "0"
 	"StartDisabled" "0"
 	"targetname" "scenery_tile_straight5"
