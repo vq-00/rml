@@ -417,7 +417,7 @@ function BuildNavigation()
 			Trace_t[ "start" ] <- hNode.GetOrigin() + Vector( 0.0, 0.0, 16.0 );
 			Trace_t[ "end" ] <- hNearNode.GetOrigin() + Vector( 0.0, 0.0, 16.0 );
 			Trace_t[ "collisiongroup" ] <- 9;
-			Trace_t[ "mask" ] <- MASK_PLAYERSOLID;
+			Trace_t[ "mask" ] <- MASK_PLAYERSOLID_BRUSHONLY;
 			TraceLineTable( Trace_t );
 			
 			if ( !Trace_t[ "hit" ] )
@@ -601,22 +601,22 @@ function MapPostSpawn()
 	local hPropPhysics = null;
 	while ( hPropPhysics = Entities.FindByClassname( hPropPhysics, "prop_physics" ) )
 	{
-		EntFireByHandle( hPropPhysics, "ClearParent", "", 1.0, null, null );
-		EntFireByHandle( hPropPhysics, "EnableMotion", "", 1.05, null, null );
+		EntFireByHandle( hPropPhysics, "ClearParent", "", 0.0, null, null );
+		EntFireByHandle( hPropPhysics, "EnableMotion", "", 0.05, null, null );
 	}
 
 	local hPropAswBarrelExplosive = null;
 	while ( hPropAswBarrelExplosive = Entities.FindByClassname( hPropAswBarrelExplosive, "asw_barrel_explosive" ) )
 	{
-		EntFireByHandle( hPropAswBarrelExplosive, "ClearParent", "", 1.0, null, null );
-		EntFireByHandle( hPropAswBarrelExplosive, "EnableMotion", "", 1.05, null, null );
+		EntFireByHandle( hPropAswBarrelExplosive, "ClearParent", "", 0.0, null, null );
+		EntFireByHandle( hPropAswBarrelExplosive, "EnableMotion", "", 0.05, null, null );
 	}
 
 	local hPropAswBarrelRadioactive = null;
 	while ( hPropAswBarrelRadioactive = Entities.FindByClassname( hPropAswBarrelRadioactive, "asw_barrel_radioactive" ) )
 	{
-		EntFireByHandle( hPropAswBarrelRadioactive, "ClearParent", "", 1.0, null, null );
-		EntFireByHandle( hPropAswBarrelRadioactive, "EnableMotion", "", 1.05, null, null );
+		EntFireByHandle( hPropAswBarrelRadioactive, "ClearParent", "", 0.0, null, null );
+		EntFireByHandle( hPropAswBarrelRadioactive, "EnableMotion", "", 0.05, null, null );
 	}
 }
 
