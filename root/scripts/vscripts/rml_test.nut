@@ -624,7 +624,8 @@ function OnGameplayStart()
 	local hMarine = null;
 	while ( hMarine = Entities.FindByClassname( hMarine, "asw_marine" ) )
 	{
-		hMarine.__KeyValueFromString( "rendercolor", "255 120 255 255" );
+		hMarine.__KeyValueFromString( "rendercolor", "255 150 255 255" );
+		DoEntFire( hMarine.GetName() + "_weapon", "addoutput", "rendercolor 255 150 255 255", 0.0, null, null );
 		
 		NetProps.SetPropFloat( hMarine.GetCommander(), "m_flMovementAxisYaw", fMarineStartRotation );
 	}

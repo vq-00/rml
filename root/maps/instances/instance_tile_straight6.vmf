@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "51"
+	"mapversion" "56"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "51"
+	"mapversion" "56"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -19399,6 +19399,7 @@ entity
 	"SetBodyGroup" "0"
 	"skin" "0"
 	"solid" "6"
+	"spawnflags" "0"
 	"StartDisabled" "0"
 	"targetname" "scenery_tile_straight6"
 	"origin" "-176.559 47.1807 415"
@@ -20358,6 +20359,7 @@ entity
 	{
 		"OnUser1" "!selfRunScriptCodeNetProps.SetPropVector(self,`m_vecClosedPosition`,self.GetOrigin())0.11"
 		"OnUser1" "!selfRunScriptCodeNetProps.SetPropVector(self,`m_vecOpenPosition`,Entities.FindByClassnameNearest(`info_target`,self.GetOrigin(),512.0).GetOrigin())0.11"
+		"OnUser1" "!selfClearParent0.11"
 	}
 	"origin" "-251 0 -65"
 	editor
@@ -20426,8 +20428,8 @@ entity
 	"wirerows" "3"
 	connections
 	{
-		"OnButtonHackCompleted" "!selfRunScriptCodeEntFireByHandle( Entities.FindByClassnameNearest( `asw_door`, self.GetOrigin(), 512.0 ), `Open`, ``, 0.0, null, null )0-1"
-		"OnButtonHackCompleted" "!selfRunScriptCodeEntFireByHandle( Entities.FindByClassnameNearest( `prop_dynamic`, self.GetOrigin(), 1024.0 ), `Skin`, `2`, 0.0, null, null )0-1"
+		"OnButtonHackCompleted" "!selfRunScriptCodeEntFireByHandle( Entities.FindByClassnameNearest( `asw_door`, self.GetOrigin(), 512.0 ), `Open`, ``, 0.0, null, null )01"
+		"OnButtonHackCompleted" "!selfRunScriptCodeEntFireByHandle( Entities.FindByClassnameNearest( `prop_dynamic`, self.GetOrigin(), 1024.0 ), `Skin`, `2`, 0.0, null, null )01"
 	}
 	solid
 	{
@@ -20744,7 +20746,7 @@ entity
 	"skin" "0"
 	"solid" "6"
 	"StartDisabled" "0"
-	"targetname" "scenery_tile_straight2"
+	"targetname" "scenery_tile_straight6"
 	"origin" "-192 -416 95.75"
 	editor
 	{
@@ -20785,7 +20787,7 @@ entity
 	"skin" "0"
 	"solid" "6"
 	"StartDisabled" "0"
-	"targetname" "scenery_tile_straight2"
+	"targetname" "scenery_tile_straight6"
 	"origin" "-192 -416 -160"
 	editor
 	{
@@ -20826,7 +20828,7 @@ entity
 	"skin" "0"
 	"solid" "6"
 	"StartDisabled" "0"
-	"targetname" "scenery_tile_straight2"
+	"targetname" "scenery_tile_straight6"
 	"origin" "-192 -416 -416"
 	editor
 	{
@@ -20949,7 +20951,7 @@ entity
 	"skin" "1"
 	"solid" "6"
 	"StartDisabled" "0"
-	"targetname" "scenery_tile_straight2"
+	"targetname" "scenery_tile_straight6"
 	"origin" "-136 -392 73.13"
 	editor
 	{
@@ -20990,7 +20992,7 @@ entity
 	"skin" "1"
 	"solid" "6"
 	"StartDisabled" "0"
-	"targetname" "scenery_tile_straight2"
+	"targetname" "scenery_tile_straight6"
 	"origin" "-136 -440 73.13"
 	editor
 	{
@@ -21031,7 +21033,7 @@ entity
 	"skin" "0"
 	"solid" "6"
 	"StartDisabled" "0"
-	"targetname" "scenery_tile_straight2"
+	"targetname" "scenery_tile_straight6"
 	"origin" "188 420 95.75"
 	editor
 	{
@@ -21072,7 +21074,7 @@ entity
 	"skin" "0"
 	"solid" "6"
 	"StartDisabled" "0"
-	"targetname" "scenery_tile_straight2"
+	"targetname" "scenery_tile_straight6"
 	"origin" "188 420 -160"
 	editor
 	{
@@ -21113,7 +21115,7 @@ entity
 	"skin" "0"
 	"solid" "6"
 	"StartDisabled" "0"
-	"targetname" "scenery_tile_straight2"
+	"targetname" "scenery_tile_straight6"
 	"origin" "188 420 -416"
 	editor
 	{
@@ -21236,7 +21238,7 @@ entity
 	"skin" "1"
 	"solid" "6"
 	"StartDisabled" "0"
-	"targetname" "scenery_tile_straight2"
+	"targetname" "scenery_tile_straight6"
 	"origin" "132 396 73.13"
 	editor
 	{
@@ -21277,7 +21279,7 @@ entity
 	"skin" "1"
 	"solid" "6"
 	"StartDisabled" "0"
-	"targetname" "scenery_tile_straight2"
+	"targetname" "scenery_tile_straight6"
 	"origin" "132 444 73.13"
 	editor
 	{
