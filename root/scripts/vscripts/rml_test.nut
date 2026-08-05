@@ -324,7 +324,8 @@ function GetTileVariants( strTile, bRecompute = true )
 		if ( !nSpawnWeight )
 			nSpawnWeight = 100;
 			
-		TileVariants_t[ strTile ].push( [ strName.slice( strTile.len() ), nSpawnWeight ] );
+		if ( nSpawnWeight > 0 )
+			TileVariants_t[ strTile ].push( [ strName.slice( strTile.len() ), nSpawnWeight ] );
 	}
 	
 	return TileVariants_t[ strTile ];
@@ -550,7 +551,7 @@ function MapPostSpawn()
 	local hButtArea = null;
 	while ( hButtArea = Entities.FindByClassname( hButtArea, "trigger_asw_button_area" ) )
 	{
-		if ( hButtArea.GetName() != "scenery_tile_turn1" )
+		if ( hButtArea.GetHealth() != 1 )
 			continue;
 		
 		nButtAreas++;
