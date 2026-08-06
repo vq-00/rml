@@ -440,7 +440,10 @@ function BuildNavigation()
 Nodes_t <- {};
 InfoNodes.GetAllNodes( Nodes_t );
 foreach ( strNode, hNode in Nodes_t )
+{
+	hNode.Unlock();
 	hNode.ClearLinks();
+}
 
 function DeleteMap()
 {
@@ -459,7 +462,10 @@ function DeleteMap()
 	Convars.ExecuteConCommand( "asw_clearhouse" );
 	
 	foreach ( strNode, hNode in Nodes_t )
+	{
+		hNode.Unlock();
 		hNode.ClearLinks();
+	}
 }
 
 MapInfo_t <- [];
