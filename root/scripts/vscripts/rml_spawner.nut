@@ -16,7 +16,9 @@ if ( fDist < 9999.0 )
 
 function ActivateHoldout( hCaller )
 {
-	if ( ( hCaller.GetOrigin() - self.GetOrigin() ).Length() > 1280.0 )
+	//if ( ( hCaller.GetOrigin() - self.GetOrigin() ).Length() > 1280.0 )
+	//	return;
+	if ( hCaller.GetMoveParent() != hParent )
 		return;
 		
 	EntFireByHandle( self, "StartSpawning", "", 0.0, null, null );

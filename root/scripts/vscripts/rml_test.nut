@@ -66,7 +66,10 @@ function PlaceTileInPlace( x, y, fRotate, strTile )
 		// spawners are cool kids gangsters mafia members who dont want to have parents
 		if ( hScenery.GetClassname() != "asw_spawner" )
 			continue;
-			
+		
+		hScenery.ValidateScriptScope();
+		hScenery.GetScriptScope().hParent <- hNewTile;
+		
 		local hSpawnerPos = Entities.CreateByClassname( "info_target" );
 		hSpawnerPos.SetOrigin( hScenery.GetOrigin() );
 		hSpawnerPos.SetAnglesVector( hScenery.GetAngles() );
