@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "128"
+	"mapversion" "133"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -26,13 +26,13 @@ viewsettings
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "16"
+	"nGridSpacing" "4"
 	"bShow3DGrid" "0"
 }
 world
 {
 	"id" "1"
-	"mapversion" "128"
+	"mapversion" "133"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -1997,7 +1997,7 @@ entity
 {
 	"id" "393"
 	"classname" "point_template"
-	"health" "75"
+	"health" "65"
 	"spawnflags" "2"
 	"targetname" "template_tile_turn5b"
 	"Template01" "tile_turn5b"
@@ -12437,8 +12437,8 @@ entity
 			"id" "12202"
 			"plane" "(96 -624 -64) (-96 -624 -64) (-96 -480 -64)"
 			"material" "METAL/METALGRATE011A"
-			"uaxis" "[0 1 0 -405.895] 0.38"
-			"vaxis" "[-1 0 0 293.818] 0.44"
+			"uaxis" "[0 1 0 -405] 0.38"
+			"vaxis" "[-1 0 0 297] 0.44"
 			"rotation" "90"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -15931,10 +15931,10 @@ entity
 		side
 		{
 			"id" "12478"
-			"plane" "(-496 -96 -64) (-624 -96 -64) (-624 96 -64)"
+			"plane" "(-504 -96 -64) (-624 -96 -64) (-624 96 -64)"
 			"material" "METAL/METALGRATE011A"
-			"uaxis" "[1 0 0 163] 0.38"
-			"vaxis" "[0 1 0 -67] 0.44"
+			"uaxis" "[1 0 0 171] 0.38"
+			"vaxis" "[0 1 0 -63] 0.44"
 			"rotation" "90"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -15942,7 +15942,7 @@ entity
 		side
 		{
 			"id" "12477"
-			"plane" "(-496 96 -96) (-624 96 -96) (-624 -96 -96)"
+			"plane" "(-504 96 -96) (-624 96 -96) (-624 -96 -96)"
 			"material" "TOOLS/TOOLSNODRAW"
 			"uaxis" "[0 1 0 29.526] 0.38"
 			"vaxis" "[-1 0 0 3.7272] 0.44"
@@ -15964,7 +15964,7 @@ entity
 		side
 		{
 			"id" "12475"
-			"plane" "(-496 -96 -96) (-624 -96 -96) (-624 -96 -64)"
+			"plane" "(-504 -96 -96) (-624 -96 -96) (-624 -96 -64)"
 			"material" "TOOLS/TOOLSNODRAW"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -15975,7 +15975,7 @@ entity
 		side
 		{
 			"id" "12474"
-			"plane" "(-624 96 -96) (-496 96 -96) (-496 96 -64)"
+			"plane" "(-624 96 -96) (-504 96 -96) (-504 96 -64)"
 			"material" "TOOLS/TOOLSNODRAW"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -15986,7 +15986,7 @@ entity
 		side
 		{
 			"id" "12473"
-			"plane" "(-496 96 -96) (-496 -96 -96) (-496 -96 -64)"
+			"plane" "(-504 96 -96) (-504 -96 -96) (-504 -96 -64)"
 			"material" "TOOLS/TOOLSNODRAW"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -16007,7 +16007,7 @@ entity
 		side
 		{
 			"id" "12484"
-			"plane" "(-480 -96 -64) (-496 -96 -64) (-496 96 -64)"
+			"plane" "(-480 -96 -64) (-504 -96 -64) (-504 96 -64)"
 			"material" "PROPS/METALSTAINLESS01"
 			"uaxis" "[0.5 0.866025 0 0] 0.55"
 			"vaxis" "[-0.866025 0.5 0 0] 0.55"
@@ -16018,7 +16018,7 @@ entity
 		side
 		{
 			"id" "12483"
-			"plane" "(-480 96 -96) (-496 96 -96) (-496 -96 -96)"
+			"plane" "(-480 96 -96) (-504 96 -96) (-504 -96 -96)"
 			"material" "TOOLS/TOOLSNODRAW"
 			"uaxis" "[0 1 0 29.526] 0.38"
 			"vaxis" "[-1 0 0 3.7272] 0.44"
@@ -16029,7 +16029,7 @@ entity
 		side
 		{
 			"id" "12482"
-			"plane" "(-480 -96 -96) (-496 -96 -96) (-496 -96 -64)"
+			"plane" "(-480 -96 -96) (-504 -96 -96) (-504 -96 -64)"
 			"material" "TOOLS/TOOLSNODRAW"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -16040,7 +16040,7 @@ entity
 		side
 		{
 			"id" "12481"
-			"plane" "(-496 96 -96) (-480 96 -96) (-480 96 -64)"
+			"plane" "(-504 96 -96) (-480 96 -96) (-480 96 -64)"
 			"material" "TOOLS/TOOLSNODRAW"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -16062,7 +16062,7 @@ entity
 		side
 		{
 			"id" "12479"
-			"plane" "(-496 -96 -96) (-496 96 -96) (-496 96 -64)"
+			"plane" "(-504 -96 -96) (-504 96 -96) (-504 96 -64)"
 			"material" "PROPS/METALSTAINLESS01"
 			"uaxis" "[0 0.866025 0.5 0] 0.55"
 			"vaxis" "[0 0.5 -0.866025 0] 0.55"
@@ -39758,7 +39758,7 @@ entity
 	"rendermode" "0"
 	"SetBodyGroup" "0"
 	"skin" "0"
-	"solid" "6"
+	"solid" "0"
 	"StartDisabled" "0"
 	"targetname" "scenery_tile_turn5b"
 	"origin" "-400 -448 -64"
