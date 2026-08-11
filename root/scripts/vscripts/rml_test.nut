@@ -402,6 +402,7 @@ function GetNextTilePos( Layout_t, x, y )
 function BuildNavigation()
 {
 	local CombinedLayout_t = MapInfo_t[ 2 ];
+	local UsedNodes_t = {};
 	
 	foreach ( strNode, hNode in Nodes_t )
 	{
@@ -435,9 +436,16 @@ function BuildNavigation()
 				
 				for ( local i = 0; i <= 12; i++ )
 					hLink.SetAcceptedMoveTypes( i, 1 );
+					
+				UsedNodes_t[ hNode ] <- true;
+				UsedNodes_t[ hNearNode ] <- true;
 			}
 		}
 	}
+	
+	foreach ( strNode, hNode in Nodes_t )
+		if ( !( hNode in UsedNodes_t ) )
+			hNode.Lock(9999.0);
 }
 
 Nodes_t <- {};
@@ -459,10 +467,43 @@ function DeleteMap()
 	DoEntFire( "asw_marker", "Disable", "", 0.0, null, null );
 	DoEntFire( "counter_*", "SetValue", "0", 0.0, null, null );
 	DoEntFire( "objmarker_escape", "Disable", "", 0.0, null, null );
-	//DoEntFire( "info_player_start", "Kill", "", 0.0, null, null );
-	//DoEntFire( "prop_physics", "Kill", "", 0.0, null, null );
 	
-	Convars.ExecuteConCommand( "asw_clearhouse" );
+	//asw_clearhouse equivalent
+	DoEntFire( "asw_drone", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_buzzer", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_parasite", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_shieldbug", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_grub", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_drone_jumper", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_harvester", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_parasite_defanged", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_queen", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_boomer", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_ranger", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_mortarbug", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_shaman", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_drone_uber", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_antlionguard_normal", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_antlionguard_cavern", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_antlion", "Kill", "", 0.0, null, null );
+	DoEntFire( "pc_antlion_worker", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_zombie", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_zombie_torso", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_poisonzombie", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_fastzombie", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_fastzombie_torso", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_headcrab", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_headcrab_fast", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_headcrab_poison", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_zombine", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_combine_s", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_combine_shotgun", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_combine_elite", "Kill", "", 0.0, null, null );
+	DoEntFire( "npc_hunter", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_alien_goo", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_grub_sac", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_spawner", "Kill", "", 0.0, null, null );
+	DoEntFire( "asw_egg", "Kill", "", 0.0, null, null );
 	
 	foreach ( strNode, hNode in Nodes_t )
 	{
