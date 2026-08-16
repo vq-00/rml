@@ -32,7 +32,67 @@ function PlaceTileInPlace( x, y, fRotate, strTile )
 	{
 		// find one which just spawned and hasnt been placed yet
 		if ( hNewTile.GetOrigin().z < -1000.0 )
-		{
+		{	
+			hNewTile.ValidateScriptScope();
+			hNewTile.GetScriptScope().bHasScenery <- true;
+			hNewTile.GetScriptScope().Scenery_t <- [];
+			hNewTile.GetScriptScope().SceneryData_t <- [];
+			hNewTile.GetScriptScope().RMLThink <- function()
+			{
+				if ( !self || !( self.IsValid() ) )
+					return 9999.0;
+					
+				local hMarine = null;
+				local fDist = 9999.0;
+				while ( hMarine = Entities.FindByClassname( hMarine, "asw_marine" ) )
+					if ( ( self.GetOrigin() - hMarine.GetOrigin() ).Length() < fDist )
+						fDist = ( self.GetOrigin() - hMarine.GetOrigin() ).Length();
+						
+				if ( bHasScenery && fDist > 1280.0 * 2.0 )
+				{
+					foreach( hScenery in Scenery_t )
+						EntFireByHandle( hScenery, "Kill", "", 0.0, null, null );
+						
+					Scenery_t <- [];
+					
+					bHasScenery <- false;
+					return 1.0;
+				}
+				
+				if ( !bHasScenery && fDist < 1280.0 * 2.0 )
+				{
+					foreach( Data_t in SceneryData_t )
+					{
+						local hScenery = Entities.CreateByClassname( "prop_dynamic" );
+						hScenery.SetModel( Data_t[0] );
+						hScenery.SetName( Data_t[1] );
+						hScenery.SetOrigin( self.GetOrigin() - Data_t[2] );
+						hScenery.SetAnglesVector( Data_t[3] );
+						hScenery.__KeyValueFromString( "rendercolor", Data_t[4] );
+						NetProps.SetPropInt( hScenery, "m_nSkin", Data_t[5] );
+						hScenery.__KeyValueFromString( "modelscale", Data_t[6] );
+						hScenery.Spawn();
+						
+						if ( !hScenery || !( hScenery.IsValid() ) )
+						{
+							ClientPrint( null, 3, "failed to spawn scenery prop " + Data_t[0] );
+							continue;
+						}
+						
+						hScenery.Activate();
+						
+						hScenery.SetParent( self );
+						
+						Scenery_t.push( hScenery );
+					}
+					
+					bHasScenery <- true;
+					return 1.0;
+				}
+				
+				return 1.0;
+			}
+			
 			bFound = true;
 			break;
 		}
@@ -46,6 +106,7 @@ function PlaceTileInPlace( x, y, fRotate, strTile )
 		return;
 	}
 
+	local PropScenery_t = [];
 	local hScenery = null;
 	while ( hScenery = Entities.FindByName( hScenery, "scenery_tile_" + strTile ) )
 	{
@@ -53,6 +114,9 @@ function PlaceTileInPlace( x, y, fRotate, strTile )
 			continue;
 			
 		hScenery.SetParent( hNewTile );
+		
+		if ( hScenery.GetClassname() == "prop_dynamic" )
+			PropScenery_t.push( hScenery );
 		
 		// disable props/brushes that could block node links from generating
 		if ( !( NetProps.GetPropInt( hScenery, "m_Collision.m_usSolidFlags" ) & 4 ) )
@@ -102,6 +166,14 @@ function PlaceTileInPlace( x, y, fRotate, strTile )
 		hSpawner.SetAnglesVector( hSpawnerHelper.GetAngles() );
 		hSpawnerHelper.Destroy();
 	}
+	
+	foreach( hProp in PropScenery_t )
+	{
+		hNewTile.GetScriptScope().Scenery_t.push( hProp );
+		hNewTile.GetScriptScope().SceneryData_t.push( [ hProp.GetModelName(), hProp.GetName(), hNewTile.GetOrigin() - hProp.GetOrigin(), hProp.GetAngles(), hProp.GetKeyValue( "rendercolor" ), NetProps.GetPropInt( hProp, "m_nSkin" ), hProp.GetKeyValue( "modelscale" ) ] );
+	}
+	
+	//AddThinkToEnt( hNewTile, "RMLThink" );
 }
 
 function GetPreviousTile( Layout_t, x, y, cIgnore = ' ' )
