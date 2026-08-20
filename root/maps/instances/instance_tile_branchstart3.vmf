@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "10"
+	"mapversion" "18"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "10"
+	"mapversion" "18"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -8316,7 +8316,7 @@ entity
 		side
 		{
 			"id" "1896"
-			"plane" "(72 152 -64) (-8 232 -64) (16 256 -64)"
+			"plane" "(-8 232 -64) (16 256 -64) (176 96 -64)"
 			"material" "METAL/METALWALL_BTS_003A"
 			"uaxis" "[-0.707107 0.707107 0 -277.294] 0.25"
 			"vaxis" "[0.707107 0.707107 0 201.984] 0.25"
@@ -8327,7 +8327,7 @@ entity
 		side
 		{
 			"id" "1895"
-			"plane" "(96 176 -96) (16 256 -96) (-8 232 -96)"
+			"plane" "(16 256 -96) (-8 232 -96) (152 72 -96)"
 			"material" "TOOLS/TOOLSNODRAW"
 			"uaxis" "[0.707107 0.707107 0 9.98535] 0.25"
 			"vaxis" "[0.707107 -0.707107 0 21.2937] 0.25"
@@ -8338,7 +8338,7 @@ entity
 		side
 		{
 			"id" "1894"
-			"plane" "(72 152 -96) (-8 232 -96) (-8 232 -64)"
+			"plane" "(-8 232 -96) (-8 232 -64) (152 72 -64)"
 			"material" "METAL/METALWALL_BTS_003A"
 			"uaxis" "[0 0 1 -128] 0.25"
 			"vaxis" "[-0.707107 0.707107 0 -405.294] 0.25"
@@ -8349,7 +8349,7 @@ entity
 		side
 		{
 			"id" "1893"
-			"plane" "(-8 232 -96) (16 256 -96) (16 256 -64)"
+			"plane" "(16 256 -96) (16 256 -64) (-8 232 -64)"
 			"material" "METAL/METALWALL_BTS_003A"
 			"uaxis" "[0 0 1 -128] 0.25"
 			"vaxis" "[0.707107 0.707107 0 488.552] 0.25"
@@ -8360,7 +8360,7 @@ entity
 		side
 		{
 			"id" "1892"
-			"plane" "(16 256 -96) (96 176 -96) (96 176 -64)"
+			"plane" "(176 96 -96) (176 96 -64) (16 256 -64)"
 			"material" "METAL/METALWALL_BTS_003A"
 			"uaxis" "[0 0 1 -128] 0.25"
 			"vaxis" "[-0.707107 0.707107 0 -405.294] 0.25"
@@ -8371,7 +8371,7 @@ entity
 		side
 		{
 			"id" "1891"
-			"plane" "(96 176 -96) (72 152 -96) (72 152 -64)"
+			"plane" "(152 72 -96) (152 72 -64) (176 96 -64)"
 			"material" "METAL/METALWALL_BTS_003A"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -8468,7 +8468,7 @@ entity
 		side
 		{
 			"id" "1908"
-			"plane" "(176 96 -64) (176 96 -96) (-159.439 -239.439 -96)"
+			"plane" "(152 72 -96) (-159.438 -239.438 -96) (-159.438 -239.438 -64)"
 			"material" "TOOLS/TOOLSNODRAW"
 			"uaxis" "[0.707107 0.707107 0 36.2783] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -8479,7 +8479,7 @@ entity
 		side
 		{
 			"id" "1907"
-			"plane" "(-299.789 -219.789 -96) (96 176 -96) (96 176 -64)"
+			"plane" "(72 152 -96) (72 152 -64) (-299.789 -219.789 -64)"
 			"material" "TOOLS/TOOLSNODRAW"
 			"uaxis" "[0.707107 0.707107 0 36.2783] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -8490,7 +8490,7 @@ entity
 		side
 		{
 			"id" "1906"
-			"plane" "(96 176 -64) (96 176 -96) (176 96 -96)"
+			"plane" "(72 152 -96) (152 72 -96) (152 72 -64)"
 			"material" "TOOLS/TOOLSNODRAW"
 			"uaxis" "[0.707107 -0.707107 0 12.3738] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -8501,21 +8501,21 @@ entity
 		side
 		{
 			"id" "1905"
-			"plane" "(96 176 -96) (-299.79 -219.79 -96) (-159.441 -239.441 -96)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 -1 0 0] 0.25"
-			"rotation" "0"
+			"plane" "(-299.789 -219.789 -96) (-159.438 -239.438 -96) (152 72 -96)"
+			"material" "METAL/UNDERGROUND_METALGRATE001C"
+			"uaxis" "[0.707107 0.707107 0 446] 0.25"
+			"vaxis" "[0.707107 -0.707107 0 256] 0.25"
+			"rotation" "45"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
 		}
 		side
 		{
 			"id" "1904"
-			"plane" "(176 96 -64) (-159.439 -239.439 -64) (-299.789 -219.789 -64)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[0.707107 0.707107 0 127.337] 0.38"
-			"vaxis" "[0.707107 -0.707107 0 123.039] 0.44"
+			"plane" "(-159.438 -239.438 -64) (-299.789 -219.789 -64) (72 152 -64)"
+			"material" "METAL/UNDERGROUND_METALGRATE001C"
+			"uaxis" "[0.707107 0.707107 0 445.589] 0.25"
+			"vaxis" "[0.707107 -0.707107 0 256] 0.25"
 			"rotation" "45"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -8523,7 +8523,7 @@ entity
 		side
 		{
 			"id" "1903"
-			"plane" "(-159.44 -239.438 -64) (-159.44 -239.438 -96) (-299.789 -219.789 -96)"
+			"plane" "(-159.438 -239.438 -96) (-299.789 -219.789 -96) (-299.789 -219.789 -64)"
 			"material" "TOOLS/TOOLSNODRAW"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -8567,10 +8567,10 @@ entity
 		{
 			"id" "1912"
 			"plane" "(-299.789 -219.789 -96) (-307.409 -227.409 -96) (-198.316 -278.316 -96)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 -1 0 0] 0.25"
-			"rotation" "0"
+			"material" "METAL/UNDERGROUND_METALGRATE001C"
+			"uaxis" "[0.707107 0.707107 0 446] 0.25"
+			"vaxis" "[0.707107 -0.707107 0 256] 0.25"
+			"rotation" "45"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
 		}
@@ -8578,9 +8578,9 @@ entity
 		{
 			"id" "1911"
 			"plane" "(-159.441 -239.441 -64) (-198.318 -278.318 -64) (-307.41 -227.41 -64)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[0.707107 0.707107 0 127.337] 0.38"
-			"vaxis" "[0.707107 -0.707107 0 123.039] 0.44"
+			"material" "METAL/UNDERGROUND_METALGRATE001C"
+			"uaxis" "[0.707107 0.707107 0 446] 0.25"
+			"vaxis" "[0.707107 -0.707107 0 256] 0.25"
 			"rotation" "45"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -8632,10 +8632,10 @@ entity
 		{
 			"id" "1918"
 			"plane" "(-217.816 -297.816 -96) (-198.324 -278.324 -96) (-288.978 -236.019 -96)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 -1 0 0] 0.25"
-			"rotation" "0"
+			"material" "METAL/UNDERGROUND_METALGRATE001C"
+			"uaxis" "[0.707107 0.707107 0 446] 0.25"
+			"vaxis" "[0.707107 -0.707107 0 256] 0.25"
+			"rotation" "45"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
 		}
@@ -8643,9 +8643,9 @@ entity
 		{
 			"id" "1917"
 			"plane" "(-198.32 -278.32 -64) (-217.817 -297.817 -64) (-288.988 -236 -64)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[0.707107 0.707107 0 127.337] 0.38"
-			"vaxis" "[0.707107 -0.707107 0 123.039] 0.44"
+			"material" "METAL/UNDERGROUND_METALGRATE001C"
+			"uaxis" "[0.707107 0.707107 0 446] 0.25"
+			"vaxis" "[0.707107 -0.707107 0 256] 0.25"
 			"rotation" "45"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -8697,10 +8697,10 @@ entity
 		{
 			"id" "1923"
 			"plane" "(-226.738 -306.738 -96) (-217.816 -297.816 -96) (-251 -269 -96)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 -1 0 0] 0.25"
-			"rotation" "0"
+			"material" "METAL/UNDERGROUND_METALGRATE001C"
+			"uaxis" "[0.707107 0.707107 0 446] 0.25"
+			"vaxis" "[0.707107 -0.707107 0 256] 0.25"
+			"rotation" "45"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
 		}
@@ -8708,9 +8708,9 @@ entity
 		{
 			"id" "1922"
 			"plane" "(-217.813 -297.813 -64) (-226.739 -306.739 -64) (-251.012 -268.98 -64)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[0.707107 0.707107 0 127.337] 0.38"
-			"vaxis" "[0.707107 -0.707107 0 123.039] 0.44"
+			"material" "METAL/UNDERGROUND_METALGRATE001C"
+			"uaxis" "[0.707107 0.707107 0 446] 0.25"
+			"vaxis" "[0.707107 -0.707107 0 256] 0.25"
 			"rotation" "45"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -12312,9 +12312,9 @@ entity
 		{
 			"id" "2208"
 			"plane" "(-251.83 -331.832 -64) (-259 -312 -64) (-246.658 -326.659 -64)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[0.707107 0.707107 0 127.337] 0.38"
-			"vaxis" "[0.707107 -0.707107 0 123.039] 0.44"
+			"material" "METAL/UNDERGROUND_METALGRATE001C"
+			"uaxis" "[0.707107 0.707107 0 446] 0.25"
+			"vaxis" "[0.707107 -0.707107 0 256] 0.25"
 			"rotation" "45"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -12377,9 +12377,9 @@ entity
 		{
 			"id" "2213"
 			"plane" "(-246.664 -326.656 -64) (-291 -274 -64) (-229.156 -309.146 -64)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[0.707107 0.707107 0 127.337] 0.38"
-			"vaxis" "[0.707107 -0.707107 0 123.039] 0.44"
+			"material" "METAL/UNDERGROUND_METALGRATE001C"
+			"uaxis" "[0.707107 0.707107 0 446] 0.25"
+			"vaxis" "[0.707107 -0.707107 0 256] 0.25"
 			"rotation" "45"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -12464,9 +12464,9 @@ entity
 		{
 			"id" "2219"
 			"plane" "(-329.93 -249.93 -64) (-257.688 -263.199 -64) (-251 -269 -64)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[0.707107 0.707107 0 127.337] 0.38"
-			"vaxis" "[0.707107 -0.707107 0 123.039] 0.44"
+			"material" "METAL/UNDERGROUND_METALGRATE001C"
+			"uaxis" "[0.707107 0.707107 0 446] 0.25"
+			"vaxis" "[0.707107 -0.707107 0 256] 0.25"
 			"rotation" "45"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -12562,9 +12562,9 @@ entity
 		{
 			"id" "2225"
 			"plane" "(-307.41 -227.408 -64) (-289 -236 -64) (-257.679 -263.2 -64)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[0.707107 0.707107 0 127.337] 0.38"
-			"vaxis" "[0.707107 -0.707107 0 123.039] 0.44"
+			"material" "METAL/UNDERGROUND_METALGRATE001C"
+			"uaxis" "[0.707107 0.707107 0 446] 0.25"
+			"vaxis" "[0.707107 -0.707107 0 256] 0.25"
 			"rotation" "45"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -12605,9 +12605,9 @@ entity
 		{
 			"id" "2248"
 			"plane" "(-291 -274 -96) (-335 -249 -96) (-384 -240 -96)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[0.707107 0.707107 0 127.337] 0.38"
-			"vaxis" "[0.707107 -0.707107 0 123.039] 0.44"
+			"material" "METAL/UNDERGROUND_METALGRATE001C"
+			"uaxis" "[0.707107 0.707107 0 446] 0.25"
+			"vaxis" "[0.707107 -0.707107 0 256] 0.25"
 			"rotation" "45"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -12616,9 +12616,9 @@ entity
 		{
 			"id" "2247"
 			"plane" "(-384 -240 -64) (-335 -249 -64) (-291 -274 -64)"
-			"material" "METAL/METALGRATE011A"
-			"uaxis" "[0.707107 0.707107 0 127.337] 0.38"
-			"vaxis" "[0.707107 -0.707107 0 123.039] 0.44"
+			"material" "METAL/UNDERGROUND_METALGRATE001C"
+			"uaxis" "[0.707107 0.707107 0 446] 0.25"
+			"vaxis" "[0.707107 -0.707107 0 256] 0.25"
 			"rotation" "45"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -18231,6 +18231,347 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "5170"
+	"classname" "trigger_hurt"
+	"damage" "1"
+	"damagecap" "2"
+	"damagemodel" "0"
+	"damagetype" "8"
+	"filtername" "filter_bioburn2"
+	"nodmgforce" "0"
+	"origin" "-15.26 -0.74 94.5"
+	"spawnflags" "64"
+	"StartDisabled" "1"
+	"targetname" "scenery_tile_branchstart3"
+	solid
+	{
+		"id" "5171"
+		side
+		{
+			"id" "2680"
+			"plane" "(-694.079 55.8243 253) (-71.8248 678.078 253) (663.566 -57.3128 253)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[0.707107 -0.707107 0 9.04618] 0.25"
+			"vaxis" "[-0.707107 -0.707107 0 -13.2564] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "2679"
+			"plane" "(-71.8248 678.078 -64) (-694.079 55.8243 -64) (41.3122 -679.567 -64)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[0.707107 -0.707107 0 9.04618] 0.25"
+			"vaxis" "[-0.707107 -0.707107 0 -13.2564] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "2678"
+			"plane" "(-694.079 55.8243 -64) (-71.8248 678.078 -64) (-71.8248 678.078 253)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[0.707107 0.707107 0 13.2564] 0.25"
+			"vaxis" "[0 0 -1 52] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "2677"
+			"plane" "(663.566 -57.3128 -64) (41.3122 -679.567 -64) (41.3122 -679.567 253)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[0.707107 0.707107 0 13.2564] 0.25"
+			"vaxis" "[0 0 -1 52] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "2676"
+			"plane" "(-71.8248 678.078 -64) (663.566 -57.3128 -64) (663.566 -57.3128 253)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[0.707107 -0.707107 0 9.04618] 0.25"
+			"vaxis" "[0 0 -1 52] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "2675"
+			"plane" "(41.3122 -679.567 -64) (-694.079 55.8243 -64) (-694.079 55.8243 253)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[0.707107 -0.707107 0 9.04618] 0.25"
+			"vaxis" "[0 0 -1 52] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "220 30 220"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[3000 15000]"
+	}
+}
+entity
+{
+	"id" "5183"
+	"classname" "asw_alien_goo"
+	"angles" "-0.843779 64.3654 -17.9358"
+	"disableshadows" "0"
+	"HasAmbientSound" "0"
+	"model" "models/aliens/biomass/biomasss.mdl"
+	"origin" "200 104 -64"
+	"PulseSpeed" "1.0"
+	"PulseStrength" "0.8"
+	"RequiredByObjective" "0"
+	"skin" "0"
+	"targetname" "scenery_tile_branchstart3"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[-14268 15500]"
+	}
+}
+entity
+{
+	"id" "5210"
+	"classname" "asw_barrel_explosive"
+	"angles" "0 291.5 0"
+	"BulletForceImmune" "0"
+	"damagetoenablemotion" "0"
+	"Damagetype" "0"
+	"disableshadows" "0"
+	"ExplodeDamage" "0"
+	"ExplodeRadius" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"forcetoenablemotion" "0"
+	"inertiaScale" "1.0"
+	"massScale" "0"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"minhealthdmg" "0"
+	"nodamageforces" "0"
+	"PerformanceMode" "0"
+	"physdamagescale" "0.1"
+	"pressuredelay" "0"
+	"shadowcastdist" "0"
+	"skin" "0"
+	"spawnflags" "264"
+	"targetname" "scenery_tile_branchstart3"
+	connections
+	{
+		"OnBreak" "!selfRunScriptCodeEntFireByHandle( Entities.FindByClassnameNearest(`trigger_hurt`,self.GetOrigin(),768.0),`Enable`,``,0.0,null,null )0-1"
+		"OnMotionEnabled" "!selfDisableMotion0.011"
+	}
+	"origin" "192 88 -63.619"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[3000 16000]"
+	}
+}
+entity
+{
+	"id" "5216"
+	"classname" "asw_barrel_explosive"
+	"angles" "0 291.5 0"
+	"BulletForceImmune" "0"
+	"damagetoenablemotion" "0"
+	"Damagetype" "0"
+	"disableshadows" "0"
+	"ExplodeDamage" "0"
+	"ExplodeRadius" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"forcetoenablemotion" "0"
+	"inertiaScale" "1.0"
+	"massScale" "0"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"minhealthdmg" "0"
+	"nodamageforces" "0"
+	"PerformanceMode" "0"
+	"physdamagescale" "0.1"
+	"pressuredelay" "0"
+	"shadowcastdist" "0"
+	"skin" "0"
+	"spawnflags" "264"
+	"targetname" "scenery_tile_branchstart3"
+	connections
+	{
+		"OnBreak" "!selfRunScriptCodeEntFireByHandle( Entities.FindByClassnameNearest(`trigger_hurt`,self.GetOrigin(),768.0),`Enable`,``,0.0,null,null )0-1"
+		"OnMotionEnabled" "!selfDisableMotion0.011"
+	}
+	"origin" "56 224 -63.619"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[3000 16000]"
+	}
+}
+entity
+{
+	"id" "5246"
+	"classname" "asw_barrel_explosive"
+	"angles" "0 291.5 0"
+	"BulletForceImmune" "0"
+	"damagetoenablemotion" "0"
+	"Damagetype" "0"
+	"disableshadows" "0"
+	"ExplodeDamage" "0"
+	"ExplodeRadius" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"forcetoenablemotion" "0"
+	"inertiaScale" "1.0"
+	"massScale" "0"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"minhealthdmg" "0"
+	"nodamageforces" "0"
+	"PerformanceMode" "0"
+	"physdamagescale" "0.1"
+	"pressuredelay" "0"
+	"shadowcastdist" "0"
+	"skin" "0"
+	"spawnflags" "264"
+	"targetname" "scenery_tile_branchstart3"
+	connections
+	{
+		"OnBreak" "!selfRunScriptCodeEntFireByHandle( Entities.FindByClassnameNearest(`trigger_hurt`,self.GetOrigin(),768.0),`Enable`,``,0.0,null,null )0-1"
+		"OnMotionEnabled" "!selfDisableMotion0.011"
+	}
+	"origin" "184 216 -63.619"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[3000 16000]"
+	}
+}
+entity
+{
+	"id" "5250"
+	"classname" "asw_barrel_explosive"
+	"angles" "0 291.5 0"
+	"BulletForceImmune" "0"
+	"damagetoenablemotion" "0"
+	"Damagetype" "0"
+	"disableshadows" "0"
+	"ExplodeDamage" "0"
+	"ExplodeRadius" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"forcetoenablemotion" "0"
+	"inertiaScale" "1.0"
+	"massScale" "0"
+	"maxdxlevel" "0"
+	"mindxlevel" "0"
+	"minhealthdmg" "0"
+	"nodamageforces" "0"
+	"PerformanceMode" "0"
+	"physdamagescale" "0.1"
+	"pressuredelay" "0"
+	"shadowcastdist" "0"
+	"skin" "0"
+	"spawnflags" "264"
+	"targetname" "scenery_tile_branchstart3"
+	connections
+	{
+		"OnBreak" "!selfRunScriptCodeEntFireByHandle( Entities.FindByClassnameNearest(`trigger_hurt`,self.GetOrigin(),768.0),`Enable`,``,0.0,null,null )0-1"
+		"OnMotionEnabled" "!selfDisableMotion0.011"
+	}
+	"origin" "312 104 -64"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[3000 16000]"
+	}
+}
+entity
+{
+	"id" "5417"
+	"classname" "asw_egg"
+	"angles" "0 0 0"
+	"FixedJumpDir" "0"
+	"ParasiteClass" "asw_parasite"
+	"SkipEggChatter" "0"
+	"targetname" "scenery_tile_branchstart3"
+	"origin" "312 208 40"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "5432"
+	"classname" "asw_egg"
+	"angles" "0 0 0"
+	"FixedJumpDir" "0"
+	"ParasiteClass" "asw_parasite"
+	"SkipEggChatter" "0"
+	"targetname" "scenery_tile_branchstart3"
+	"origin" "-424 -496 6.22818"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "5455"
+	"classname" "filter_activator_class"
+	"filterclass" "asw_alien_goo"
+	"Negated" "Allow entities that match criteria"
+	"targetname" "filter_bioburn2"
+	"origin" "-19.7845 38.1854 261"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"comments" "we can have only 1 of those in entire map"
+		"logicalpos" "[3000 15500]"
 	}
 }
 cameras
