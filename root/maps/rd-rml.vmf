@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "588"
+	"mapversion" "591"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -62,13 +62,13 @@ viewsettings
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "8"
+	"nGridSpacing" "32"
 	"bShow3DGrid" "0"
 }
 world
 {
 	"id" "1"
-	"mapversion" "588"
+	"mapversion" "591"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -127494,7 +127494,7 @@ entity
 	"rendercolor" "255 255 255"
 	"skin" "0"
 	"solid" "6"
-	"origin" "1287.94 3153.88 -128"
+	"origin" "1280 3840 -128"
 	editor
 	{
 		"color" "255 255 0"
@@ -127519,7 +127519,7 @@ entity
 	"rendercolor" "255 255 255"
 	"skin" "0"
 	"solid" "6"
-	"origin" "1285.45 3263.92 212"
+	"origin" "1277.51 3950.04 212"
 	editor
 	{
 		"color" "255 255 0"
@@ -127544,7 +127544,7 @@ entity
 	"rendercolor" "255 255 255"
 	"skin" "0"
 	"solid" "6"
-	"origin" "-1295.51 4070 -128"
+	"origin" "-1280 3840 -128"
 	editor
 	{
 		"color" "255 255 0"
@@ -127569,7 +127569,7 @@ entity
 	"rendercolor" "255 255 255"
 	"skin" "0"
 	"solid" "6"
-	"origin" "-1298 4180.04 212"
+	"origin" "-1282.49 3950.04 212"
 	editor
 	{
 		"color" "255 255 0"
@@ -127594,7 +127594,7 @@ entity
 	"rendercolor" "255 255 255"
 	"skin" "0"
 	"solid" "6"
-	"origin" "-2568 2076 -128"
+	"origin" "-2560 2528 -128"
 	editor
 	{
 		"color" "255 255 0"
@@ -127619,7 +127619,7 @@ entity
 	"rendercolor" "255 255 255"
 	"skin" "0"
 	"solid" "6"
-	"origin" "-2570.49 2186.04 212"
+	"origin" "-2562.49 2638.04 212"
 	editor
 	{
 		"color" "255 255 0"
@@ -127644,7 +127644,7 @@ entity
 	"rendercolor" "255 255 255"
 	"skin" "0"
 	"solid" "6"
-	"origin" "1262.92 733.947 -128"
+	"origin" "1280 1314.68 -128"
 	editor
 	{
 		"color" "255 255 0"
@@ -127669,7 +127669,7 @@ entity
 	"rendercolor" "255 255 255"
 	"skin" "0"
 	"solid" "6"
-	"origin" "1311.69 635.266 212"
+	"origin" "1328.77 1216 212"
 	editor
 	{
 		"color" "255 255 0"
@@ -127694,7 +127694,7 @@ entity
 	"rendercolor" "255 255 255"
 	"skin" "0"
 	"solid" "6"
-	"origin" "4798.88 -1245.97 -128"
+	"origin" "5152 -1268.88 -128"
 	editor
 	{
 		"color" "255 255 0"
@@ -127719,7 +127719,7 @@ entity
 	"rendercolor" "255 255 255"
 	"skin" "0"
 	"solid" "6"
-	"origin" "4689.38 -1257.09 212"
+	"origin" "5042.5 -1280 212"
 	editor
 	{
 		"color" "255 255 0"
@@ -127794,7 +127794,7 @@ entity
 	"rendercolor" "255 255 255"
 	"skin" "0"
 	"solid" "6"
-	"origin" "-2850 -2594 -128"
+	"origin" "-2560 -2599.89 -128"
 	editor
 	{
 		"color" "255 255 0"
@@ -127819,7 +127819,7 @@ entity
 	"rendercolor" "255 255 255"
 	"skin" "0"
 	"solid" "6"
-	"origin" "-2886.38 -2490.11 212"
+	"origin" "-2596.38 -2496 212"
 	editor
 	{
 		"color" "255 255 0"
@@ -127844,7 +127844,7 @@ entity
 	"rendercolor" "255 255 255"
 	"skin" "0"
 	"solid" "6"
-	"origin" "-1329.82 -424.57 -128"
+	"origin" "-1299.44 -24.218 -128"
 	editor
 	{
 		"color" "255 255 0"
@@ -127869,7 +127869,7 @@ entity
 	"rendercolor" "255 255 255"
 	"skin" "0"
 	"solid" "6"
-	"origin" "-1246.38 -496.352 212"
+	"origin" "-1216 -96 212"
 	editor
 	{
 		"color" "255 255 0"
