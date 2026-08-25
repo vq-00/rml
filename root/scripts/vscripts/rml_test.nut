@@ -738,12 +738,12 @@ function MapPostSpawn()
 	local hEgg = null;
 	while ( hEgg = Entities.FindByClassname( hEgg, "asw_egg" ) )
 		Eggs_t.push( hEgg );
-		
 	
 	foreach ( hEgg in Eggs_t )
 	{
 		local hNewEgg = Entities.CreateByClassname( "asw_egg" );
 		hNewEgg.SetOrigin( hEgg.GetOrigin() );
+		hNewEgg.SetAnglesVector( hEgg.GetAngles() );
 		hNewEgg.Spawn();
 		hNewEgg.Activate();
 		hEgg.Destroy();
