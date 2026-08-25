@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "14"
+	"mapversion" "15"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -14,13 +14,13 @@ viewsettings
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "32"
+	"nGridSpacing" "4"
 	"bShow3DGrid" "0"
 }
 world
 {
 	"id" "1"
-	"mapversion" "14"
+	"mapversion" "15"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -8039,10 +8039,10 @@ entity
 		side
 		{
 			"id" "1138"
-			"plane" "(392 232 -96) (392 280 -96) (440 280 -96)"
+			"plane" "(392 232 -100) (392 280 -100) (440 280 -100)"
 			"material" "METAL/METALWALL060A"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 -1 0 352] 0.25"
+			"uaxis" "[1 0 0 -85.3335] 0.09375"
+			"vaxis" "[0 -1 0 426.667] 0.09375"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -8061,7 +8061,7 @@ entity
 		side
 		{
 			"id" "1136"
-			"plane" "(392 232 -416) (392 280 -416) (392 280 -96)"
+			"plane" "(392 232 -416) (392 280 -416) (392 280 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[0 1 0 -53.333] 0.75"
 			"vaxis" "[0 0 -1 361.651] 0.63"
@@ -8072,7 +8072,7 @@ entity
 		side
 		{
 			"id" "1135"
-			"plane" "(440 280 -416) (440 232 -416) (440 232 -96)"
+			"plane" "(440 280 -416) (440 232 -416) (440 232 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[0 1 0 -53] 0.75"
 			"vaxis" "[0 0 -1 361.635] 0.63"
@@ -8083,7 +8083,7 @@ entity
 		side
 		{
 			"id" "1134"
-			"plane" "(392 280 -416) (440 280 -416) (440 280 -96)"
+			"plane" "(392 280 -416) (440 280 -416) (440 280 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[1 0 0 53.333] 0.75"
 			"vaxis" "[0 0 -1 296.635] 0.63"
@@ -8094,7 +8094,7 @@ entity
 		side
 		{
 			"id" "1133"
-			"plane" "(440 232 -416) (392 232 -416) (392 232 -96)"
+			"plane" "(440 232 -416) (392 232 -416) (392 232 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[1 0 0 53.333] 0.75"
 			"vaxis" "[0 0 -1 358.4] 0.625"
@@ -8115,10 +8115,10 @@ entity
 		side
 		{
 			"id" "1144"
-			"plane" "(392 -264 -96) (392 -216 -96) (440 -216 -96)"
+			"plane" "(392 -264 -100) (392 -216 -100) (440 -216 -100)"
 			"material" "METAL/METALWALL060A"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 -1 0 416] 0.25"
+			"uaxis" "[1 0 0 -85.3335] 0.09375"
+			"vaxis" "[0 -1 0 -256] 0.09375"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -8137,7 +8137,7 @@ entity
 		side
 		{
 			"id" "1142"
-			"plane" "(392 -264 -416) (392 -216 -416) (392 -216 -96)"
+			"plane" "(392 -264 -416) (392 -216 -416) (392 -216 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[0 1 0 -32] 0.75"
 			"vaxis" "[0 0 -1 361.651] 0.63"
@@ -8148,7 +8148,7 @@ entity
 		side
 		{
 			"id" "1141"
-			"plane" "(440 -216 -416) (440 -264 -416) (440 -264 -96)"
+			"plane" "(440 -216 -416) (440 -264 -416) (440 -264 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[0 1 0 -31.6665] 0.75"
 			"vaxis" "[0 0 -1 361.635] 0.63"
@@ -8159,7 +8159,7 @@ entity
 		side
 		{
 			"id" "1140"
-			"plane" "(392 -216 -416) (440 -216 -416) (440 -216 -96)"
+			"plane" "(392 -216 -416) (440 -216 -416) (440 -216 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[1 0 0 53.333] 0.75"
 			"vaxis" "[0 0 -1 296.635] 0.63"
@@ -8170,7 +8170,7 @@ entity
 		side
 		{
 			"id" "1139"
-			"plane" "(440 -264 -416) (392 -264 -416) (392 -264 -96)"
+			"plane" "(440 -264 -416) (392 -264 -416) (392 -264 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[1 0 0 53.333] 0.75"
 			"vaxis" "[0 0 -1 358.4] 0.625"
@@ -8191,10 +8191,10 @@ entity
 		side
 		{
 			"id" "1150"
-			"plane" "(-288 -128 -96) (-288 -80 -96) (-240 -80 -96)"
+			"plane" "(-288 -128 -100) (-288 -80 -100) (-240 -80 -100)"
 			"material" "METAL/METALWALL060A"
-			"uaxis" "[1 0 0 160] 0.25"
-			"vaxis" "[0 -1 0 448] 0.25"
+			"uaxis" "[1 0 0 0] 0.09375"
+			"vaxis" "[0 -1 0 -341.333] 0.09375"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -8213,7 +8213,7 @@ entity
 		side
 		{
 			"id" "1148"
-			"plane" "(-288 -128 -416) (-288 -80 -416) (-288 -80 -96)"
+			"plane" "(-288 -128 -416) (-288 -80 -416) (-288 -80 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[0 1 0 -21.333] 0.75"
 			"vaxis" "[0 0 -1 361.651] 0.63"
@@ -8224,7 +8224,7 @@ entity
 		side
 		{
 			"id" "1147"
-			"plane" "(-240 -80 -416) (-240 -128 -416) (-240 -128 -96)"
+			"plane" "(-240 -80 -416) (-240 -128 -416) (-240 -128 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[0 1 0 -21] 0.75"
 			"vaxis" "[0 0 -1 361.635] 0.63"
@@ -8235,7 +8235,7 @@ entity
 		side
 		{
 			"id" "1146"
-			"plane" "(-288 -80 -416) (-240 -80 -416) (-240 -80 -96)"
+			"plane" "(-288 -80 -416) (-240 -80 -416) (-240 -80 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[1 0 0 0] 0.75"
 			"vaxis" "[0 0 -1 296.635] 0.63"
@@ -8246,7 +8246,7 @@ entity
 		side
 		{
 			"id" "1145"
-			"plane" "(-240 -128 -416) (-288 -128 -416) (-288 -128 -96)"
+			"plane" "(-240 -128 -416) (-288 -128 -416) (-288 -128 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[1 0 0 0] 0.75"
 			"vaxis" "[0 0 -1 358.4] 0.625"
@@ -8267,10 +8267,10 @@ entity
 		side
 		{
 			"id" "1156"
-			"plane" "(-288 80 -96) (-288 128 -96) (-240 128 -96)"
+			"plane" "(-288 80 -100) (-288 128 -100) (-240 128 -100)"
 			"material" "METAL/METALWALL060A"
-			"uaxis" "[1 0 0 160] 0.25"
-			"vaxis" "[0 -1 0 256] 0.25"
+			"uaxis" "[1 0 0 0] 0.09375"
+			"vaxis" "[0 -1 0 341.333] 0.09375"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -8289,7 +8289,7 @@ entity
 		side
 		{
 			"id" "1154"
-			"plane" "(-288 80 -416) (-288 128 -416) (-288 128 -96)"
+			"plane" "(-288 80 -416) (-288 128 -416) (-288 128 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[0 1 0 -42.6665] 0.75"
 			"vaxis" "[0 0 -1 361.651] 0.63"
@@ -8300,7 +8300,7 @@ entity
 		side
 		{
 			"id" "1153"
-			"plane" "(-240 128 -416) (-240 80 -416) (-240 80 -96)"
+			"plane" "(-240 128 -416) (-240 80 -416) (-240 80 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[0 1 0 -42.333] 0.75"
 			"vaxis" "[0 0 -1 361.635] 0.63"
@@ -8311,7 +8311,7 @@ entity
 		side
 		{
 			"id" "1152"
-			"plane" "(-288 128 -416) (-240 128 -416) (-240 128 -96)"
+			"plane" "(-288 128 -416) (-240 128 -416) (-240 128 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[1 0 0 0] 0.75"
 			"vaxis" "[0 0 -1 296.635] 0.63"
@@ -8322,7 +8322,7 @@ entity
 		side
 		{
 			"id" "1151"
-			"plane" "(-240 80 -416) (-288 80 -416) (-288 80 -96)"
+			"plane" "(-240 80 -416) (-288 80 -416) (-288 80 -100)"
 			"material" "METAL/METALTRUSS002A"
 			"uaxis" "[1 0 0 0] 0.75"
 			"vaxis" "[0 0 -1 358.4] 0.625"
