@@ -1,5 +1,3 @@
-//ScriptScopePostSpawn_t <- clone self.GetScriptScope();
-
 const PATH_UP = 1;
 const PATH_DOWN = 2;
 const PATH_LEFT = 3;
@@ -28,8 +26,7 @@ function CreateRandomLayout( nSizeX = 10, nSizeY = 10, nLengthMin = 10, nLengthM
 			Layout_t[y].push( ' ' );
 		}
 	}
-	
-	//local vecCurPos = Vector( 1, 1, 0 );
+
 	local vecCurPos = Vector( RandomHQUniformIntDistribution( 0, nSizeX - 1 ), RandomHQUniformIntDistribution( 0, nSizeY - 1 ), 0 );
 	
 	local nHorizMoves = 0;
@@ -218,7 +215,6 @@ function GetRandomValidPathDirection( Layout_t, vecCurPos, bAllowMove = true )
 		
 		local vecNewPos = Vector( vecCurPos.x, vecCurPos.y, vecCurPos.z );
 		
-		//nDir = RandomInt( PATH_UP, PATH_RIGHT );
 		nDir = GetRandomDirectionFromWeights( DirWeights_t );
 		switch ( nDir )
 		{
@@ -603,33 +599,6 @@ function DirLetterToSymbol( cDir )
 	return null;
 }
 
-/*
-11: at 2,0 decided to merge branch, (vector : (3.000000, 0.000000, 62.000000))
-11: at 4,5 decided to merge branch, (vector : (3.000000, 5.000000, 60.000000))
-0   >v     
-1vL ^v     
-2>v ^>v    
-3 v>^ v    
-4 >^v<<    
-5  v<      
-6  v       
-7  v       
-8 v<   >>>E
-9 >>>>>^   
- 0123456789
-------
-0>>>       
-1U         
-2D         
-3v         
-4v   D     
-5>e  <     
-6e         
-7^   >v    
-8^   ^e    
-9^L  U     
- 0123456789
- */
 function CombineMainLayoutAndBranchLayout( Layout_t, BranchLayout_t )
 {
 	local nSizeY = Layout_t.len();
@@ -812,24 +781,3 @@ function PrintLayout( Layout_t )
 		printl( strRow );
 	}
 }
-
-// make threads see those
-// todo automate the additions to this table with a for loop fetching functions from getscriptscope
-//getroottable()[ "CreateRandomLayout" ] <- CreateRandomLayout;
-//getroottable()[ "GetRandomValidPathDirection" ] <- GetRandomValidPathDirection;
-//getroottable()[ "CreateBranchLayout" ] <- CreateBranchLayout;
-//getroottable()[ "CombineMainLayoutAndBranchLayout" ] <- CombineMainLayoutAndBranchLayout;
-//getroottable()[ "ComputeDirectionWeights" ] <- ComputeDirectionWeights;
-//getroottable()[ "GetRandomDirectionFromWeights" ] <- GetRandomDirectionFromWeights;
-//getroottable()[ "DoMoveLayout" ] <- DoMoveLayout;
-//getroottable()[ "PrintLayout" ] <- PrintLayout;
-
-//foreach( strVar, pVar in self.GetScriptScope() )
-//{	
-//	if ( strVar in ScriptScopePostSpawn_t )
-//		continue;
-//	
-//	if ( typeof( pVar ) == "function" )
-//		getroottable()[ strVar ] <- pVar;
-//}
-

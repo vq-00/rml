@@ -440,9 +440,6 @@ function BuildLayout( Layout_t )
 	{
 		for ( local x = 0; x < nSizeX; x++ )
 		{
-			//if ( Layout_t[y][x] == ' ' )
-			//	continue;
-
 			local strTile = FindTileType( Layout_t, x, y );
 			local strRandomVariant = PickRandomTileVariant( GetTileVariants( strTile ) );
 			
@@ -595,8 +592,9 @@ function SpawnMap( nSeed = -1 )
 	
 	// need a delay for the engine to free previous edicts properly
 	EntFireByHandle( hSelf, "RunScriptCode", "local nSeed = " + nSeed.tostring() + ";while( !newthread( _SpawnMap ).call( nSeed ) ){ ClientPrint( null, 3, \"Failed to spawn map with seed \" + nSeed.tostring() + \", retrying with random seed\" ); nSeed = RandomHQUniformIntDistribution( 100000, 999999 ) };", 0.2, null, null );
-	EntFireByHandle( hSelf, "RunScriptCode", "newthread( BuildNavigation ).call();", 0.25, null, null );
-	DoEntFire( "clip_tile_*", "Kill", "", 0.3, null, null );
+	// dont build nav earlier than 0.1s after map spawn (the entfire above)
+	EntFireByHandle( hSelf, "RunScriptCode", "newthread( BuildNavigation ).call();", 0.3, null, null );
+	DoEntFire( "clip_tile_*", "Kill", "", 0.35, null, null );
 }
 
 function _SpawnMap( nSeed )
@@ -610,15 +608,11 @@ function _SpawnMap( nSeed )
 	
 	printl( "seed " + nSeed.tostring() );
 	
-	//local LayoutBase_t = newthread( CreateRandomLayout ).call( MAP_MAX_SIZE_X, MAP_MAX_SIZE_Y, 50, 75 )[0];
 	local LayoutBase_t = CreateRandomLayout( MAP_MAX_SIZE_X, MAP_MAX_SIZE_Y, 10, 15 )[0];
 	
 	PrintLayout( LayoutBase_t );
 	printl("-------------")
 	
-	//some cool settings: 
-	// 3, 1, 3, 3, 2, 5
-	//local BranchLayout_t = newthread( CreateBranchLayout ).call( LayoutBase_t, 3, 3, 6, 3, 1, 6 );
 	local BranchLayout_t = CreateDeadBranchLayout( LayoutBase_t, 3, 1, 3 );
 	if ( !BranchLayout_t )
 		return ClientPrint( null, 3, "failed to create a deadbranch layout after 1000 tries" );
@@ -643,8 +637,6 @@ function _SpawnMap( nSeed )
 	MapInfo_t <- [ LayoutBase_t, BranchLayout_t, CombinedLayout_t ];
 	
 	BuildLayout( CombinedLayout_t );
-	
-	//EntFireByHandle( hSelf, "RunScriptCode", "BuildNavigation();", 0.05, null, null );
 	
 	EntFireByHandle( hSelf, "RunScriptCode", "MapPostSpawn()", 0.1, null, null );
 	
@@ -741,6 +733,21 @@ function MapPostSpawn()
 		EntFireByHandle( hPropAswBarrelRadioactive, "ClearParent", "", 0.0, null, null );
 		EntFireByHandle( hPropAswBarrelRadioactive, "EnableMotion", "", 0.05, null, null );
 	}
+	
+	local Eggs_t = [];
+	local hEgg = null;
+	while ( hEgg = Entities.FindByClassname( hEgg, "asw_egg" ) )
+		Eggs_t.push( hEgg );
+		
+	
+	foreach ( hEgg in Eggs_t )
+	{
+		local hNewEgg = Entities.CreateByClassname( "asw_egg" );
+		hNewEgg.SetOrigin( hEgg.GetOrigin() );
+		hNewEgg.Spawn();
+		hNewEgg.Activate();
+		hEgg.Destroy();
+	}
 }
 
 function OnGameplayStart()
@@ -779,9 +786,8 @@ foreach( strVar, pVar in self.GetScriptScope() )
 {	
 	if ( strVar in ScriptScopePostSpawn_t && strVar != "hSelf" )
 		continue;
-	
-	//if ( typeof( pVar ) == "function" || typeof( pVar ) == "table" || typeof( pVar ) == "array" )
-		getroottable()[ strVar ] <- pVar;
+
+	getroottable()[ strVar ] <- pVar;
 }
 
 SpawnMap();
