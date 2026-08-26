@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "46"
+	"mapversion" "47"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "46"
+	"mapversion" "47"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -6557,7 +6557,7 @@ entity
 	"physdamagescale" "0.1"
 	"pressuredelay" "0"
 	"shadowcastdist" "0"
-	"skin" "0"
+	"skin" "1"
 	"spawnflags" "264"
 	"targetname" "scenery_tile_branchend3"
 	"origin" "182 24 -63"
@@ -6594,7 +6594,7 @@ entity
 	"physdamagescale" "0.1"
 	"pressuredelay" "0"
 	"shadowcastdist" "0"
-	"skin" "0"
+	"skin" "1"
 	"spawnflags" "264"
 	"targetname" "scenery_tile_branchend3"
 	"origin" "204 48 -63"
@@ -6631,7 +6631,7 @@ entity
 	"physdamagescale" "0.1"
 	"pressuredelay" "0"
 	"shadowcastdist" "0"
-	"skin" "0"
+	"skin" "1"
 	"spawnflags" "264"
 	"targetname" "scenery_tile_branchend3"
 	"origin" "172 56 -63"
@@ -6668,7 +6668,7 @@ entity
 	"physdamagescale" "0.1"
 	"pressuredelay" "0"
 	"shadowcastdist" "0"
-	"skin" "0"
+	"skin" "1"
 	"spawnflags" "264"
 	"targetname" "scenery_tile_branchend3"
 	"origin" "100 -272 -63.6189"
