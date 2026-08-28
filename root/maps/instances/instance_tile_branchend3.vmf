@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "47"
+	"mapversion" "48"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "47"
+	"mapversion" "48"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -7132,7 +7132,7 @@ entity
 	"renderfx" "0"
 	"rendermode" "9"
 	"spawnflags" "1"
-	"targetname" "scenery_tile_branchend2"
+	"targetname" "scenery_tile_branchend3"
 	"origin" "461 432 -13"
 	editor
 	{

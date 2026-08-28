@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "591"
+	"mapversion" "592"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -56,6 +56,12 @@ visgroups
 		"visgroupid" "24"
 		"color" "94 119 148"
 	}
+	visgroup
+	{
+		"name" "straight8"
+		"visgroupid" "25"
+		"color" "152 137 110"
+	}
 }
 viewsettings
 {
@@ -68,7 +74,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "591"
+	"mapversion" "592"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -126864,20 +126870,24 @@ entity
 		"logicalpos" "[0 11000]"
 	}
 }
-entity
+hidden
 {
-	"id" "339624"
-	"classname" "func_instance"
-	"angles" "-0 0 0"
-	"file" "instances/instance_tile_straight8.vmf"
-	"fixup_style" "2"
-	"origin" "9472 -5632 -4864"
-	editor
+	entity
 	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 500]"
+		"id" "339624"
+		"classname" "func_instance"
+		"angles" "-0 0 0"
+		"file" "instances/instance_tile_straight8.vmf"
+		"fixup_style" "2"
+		"origin" "9472 -5632 -4864"
+		editor
+		{
+			"color" "220 30 220"
+			"visgroupid" "25"
+			"visgroupshown" "0"
+			"visgroupautoshown" "1"
+			"logicalpos" "[0 500]"
+		}
 	}
 }
 entity
