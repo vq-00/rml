@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "7397"
-	"mapversion" "592"
+	"mapversion" "594"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -68,13 +68,13 @@ viewsettings
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "32"
+	"nGridSpacing" "4"
 	"bShow3DGrid" "0"
 }
 world
 {
 	"id" "1"
-	"mapversion" "592"
+	"mapversion" "594"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -102876,7 +102876,7 @@ entity
 {
 	"id" "299105"
 	"classname" "math_counter"
-	"max" "2"
+	"max" "3"
 	"min" "0"
 	"StartDisabled" "0"
 	"startvalue" "0"
@@ -129311,6 +129311,298 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 3000]"
+	}
+}
+entity
+{
+	"id" "363764"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_reserves"
+	"StartDisabled" "0"
+	"targetname" "objmarker_reserves"
+	"origin" "-64 108 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "363766"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_reserves"
+	"StartDisabled" "0"
+	"targetname" "objmarker_reserves"
+	"origin" "-80 108 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "363768"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_reserves"
+	"StartDisabled" "0"
+	"targetname" "objmarker_reserves"
+	"origin" "-96 108 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "363770"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_reserves"
+	"StartDisabled" "0"
+	"targetname" "objmarker_reserves"
+	"origin" "-112 108 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "363772"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_reserves"
+	"StartDisabled" "0"
+	"targetname" "objmarker_reserves"
+	"origin" "-128 108 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "363774"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_reserves"
+	"StartDisabled" "0"
+	"targetname" "objmarker_reserves"
+	"origin" "-144 108 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "363776"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_reserves"
+	"StartDisabled" "0"
+	"targetname" "objmarker_reserves"
+	"origin" "-160 108 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "363778"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_reserves"
+	"StartDisabled" "0"
+	"targetname" "objmarker_reserves"
+	"origin" "-176 108 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "363780"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_reserves"
+	"StartDisabled" "0"
+	"targetname" "objmarker_reserves"
+	"origin" "-192 108 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "363782"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_reserves"
+	"StartDisabled" "0"
+	"targetname" "objmarker_reserves"
+	"origin" "-208 108 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "363784"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_reserves"
+	"StartDisabled" "0"
+	"targetname" "objmarker_reserves"
+	"origin" "-224 108 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "363786"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_reserves"
+	"StartDisabled" "0"
+	"targetname" "objmarker_reserves"
+	"origin" "-240 108 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "363788"
+	"classname" "asw_marker"
+	"angles" "0 0 0"
+	"mapheight" "256"
+	"mapwidth" "256"
+	"objectivename" "obj_reserves"
+	"StartDisabled" "0"
+	"targetname" "objmarker_reserves"
+	"origin" "-256 108 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "363881"
+	"classname" "asw_objective_triggered"
+	"objectivedescription1" "DO NOT PRESS AZ-5"
+	"objectivetitle" "Cut Flow to Oil Tanks"
+	"Optional" "0"
+	"SetMaxProgress" "3"
+	"SetProgress" "0"
+	"SetShowPercentage" "0"
+	"targetname" "obj_reserves"
+	"Visible" "1"
+	"origin" "-16 4 1"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "363921"
+	"classname" "math_counter"
+	"max" "3"
+	"min" "0"
+	"StartDisabled" "0"
+	"startvalue" "0"
+	"targetname" "counter_reserves"
+	connections
+	{
+		"OnHitMax" "obj_reservesSetComplete0-1"
+		"OutValue" "obj_reservesSetProgress0-1"
+		"OnHitMax" "counter_escapeAdd10-1"
+	}
+	"origin" "-52 -160 1"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
 	}
 }
 cameras
