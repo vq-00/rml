@@ -644,6 +644,18 @@ function _SpawnMap( nSeed )
 	return true;
 }
 
+CustomHacks_t <-
+[
+	"binary",
+	"coolant",
+	"handshake",
+	"intrusion",
+	"memory",
+	"override",
+	"packets",
+	"waveform"
+];
+
 function MapPostSpawn()
 {
 // complete hacks objective
@@ -656,6 +668,15 @@ function MapPostSpawn()
 		hMarker = Entities.FindByName( hMarker, "objmarker_hacks" );
 		EntFireByHandle( hMarker, "Enable", "", 0.0, null, null );
 		hMarker.SetOrigin( hCompArea.GetOrigin() );
+		
+		local hCustomHack = Entities.CreateByClassname( "rd_computer_vscript" );
+		local strRandomHack = CustomHacks_t[ RandomHQUniformIntDistribution( 0, CustomHacks_t.len() - 1 ) ];
+		hCustomHack.__KeyValueFromString( "vscripts", "rml_hack_" + strRandomHack + "_server.nut" );
+		hCustomHack.__KeyValueFromString( "client_vscript", "rml_hack_" + strRandomHack + "_client.nut" );
+		hCustomHack.Spawn();
+		hCustomHack.Activate();
+		
+		NetProps.SetPropEntity( hCompArea, "m_hCustomHack", hCustomHack );
 	}
 	
 	DoEntFire( "obj_hacks_real", "SetMaxProgress", nCompAreas.tostring(), 0.0, null, null );
