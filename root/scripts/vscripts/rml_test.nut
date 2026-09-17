@@ -532,6 +532,7 @@ function DeleteMap()
 	DoEntFire( "tile_*", "Kill", "", 0.0, null, null );
 	DoEntFire( "asw_objective_*", "SetIncomplete", "", 0.0, null, null );
 	DoEntFire( "obj_power", "SetVisible", "1", 0.0, null, null );
+	DoEntFire( "obj_reserves", "SetVisible", "1", 0.0, null, null );
 	DoEntFire( "asw_marker", "SetIncomplete", "", 0.0, null, null );
 	DoEntFire( "asw_marker", "Disable", "", 0.0, null, null );
 	DoEntFire( "counter_*", "SetValue", "0", 0.0, null, null );
@@ -645,8 +646,8 @@ function _SpawnMap( nSeed )
 
 function MapPostSpawn()
 {
+// complete hacks objective
 	local hMarker = null;
-	
 	local nCompAreas = 0;
 	local hCompArea = null;
 	while ( hCompArea = Entities.FindByClassname( hCompArea, "trigger_asw_computer_area" ) )
@@ -659,7 +660,7 @@ function MapPostSpawn()
 	
 	DoEntFire( "obj_hacks_real", "SetMaxProgress", nCompAreas.tostring(), 0.0, null, null );
 	DoEntFire( "counter_hacks", "addoutput", "max " + nCompAreas.tostring(), 0.0, null, null );
-	
+// destroy power sources objective
 	hMarker = null;
 	local nButtAreas = 0;
 	local hButtArea = null;
@@ -681,6 +682,29 @@ function MapPostSpawn()
 		DoEntFire( "obj_power", "SetVisible", "0", 0.0, null, null );
 		DoEntFire( "counter_power", "addoutput", "max 1", 0.0, null, null );
 		DoEntFire( "counter_power", "Add", "1", 0.0, null, null );
+	}
+// oil reserves objective
+	hMarker = null;
+	local nButtAreas = 0;
+	local hButtArea = null;
+	while ( hButtArea = Entities.FindByClassname( hButtArea, "trigger_asw_button_area" ) )
+	{
+		if ( hButtArea.GetHealth() != 2 )
+			continue;
+		
+		nButtAreas++;
+		hMarker = Entities.FindByName( hMarker, "objmarker_reserves" );
+		EntFireByHandle( hMarker, "Enable", "", 0.0, null, null );
+		hMarker.SetOrigin( hButtArea.GetOrigin() );
+	}
+	
+	DoEntFire( "obj_reserves", "SetMaxProgress", nButtAreas.tostring(), 0.0, null, null );
+	DoEntFire( "counter_reserves", "addoutput", "max " + nButtAreas.tostring(), 0.0, null, null );
+	if ( nButtAreas == 0 )
+	{
+		DoEntFire( "obj_reserves", "SetVisible", "0", 0.0, null, null );
+		DoEntFire( "counter_reserves", "addoutput", "max 1", 0.0, null, null );
+		DoEntFire( "counter_reserves", "Add", "1", 0.0, null, null );
 	}
 	
 	DoEntFire( "objmarker_escape", "RunScriptCode", "self.SetOrigin( Entities.FindByClassname( null, \"trigger_asw_door_area\" ).GetOrigin() )", 0.0, null, null );
